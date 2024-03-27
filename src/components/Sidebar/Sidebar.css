@@ -1,0 +1,78 @@
+#sidebar {
+    width: 200px;
+    padding: 0 10px;
+    height: calc(100vh - 56px);
+    overflow-y: hidden;
+}
+
+#sidebar > div {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#sidebar:hover {
+    overflow-y: scroll;
+}
+
+.nav-link {
+    color: black;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 10px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.nav-link:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.nav-header {
+    padding-left: 5px;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 40px;
+    color: black;
+}
+
+#profile-link:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#sidebar-min {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+#sidebar-min a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    width: 65px;
+    padding: 20px 0;
+    border-radius: 10px;
+    gap: 5px;
+}
+
+#sidebar-min a:hover {
+    background-color: lightgray;
+}
+
+#sidebar-min i {
+    font-size: 0.9rem;
+}
+
+#sidebar-min span {
+    font-size: 0.6rem;
+}
