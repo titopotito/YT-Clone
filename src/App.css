@@ -1,0 +1,101 @@
+body {
+    font-family: "Roboto", "Arial", "sans-serif";
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 56px;
+}
+
+.header > div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+#brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#brand i {
+    color: red;
+}
+
+#brand > a {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+}
+
+#search-form {
+    width: 360px;
+    display: flex;
+}
+
+#search-form input {
+    padding: 10px 15px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+#search-form input:focus {
+    outline: 1px solid lightblue;
+}
+
+#search-form button {
+    width: 60px;
+    border-radius: 0 20px 20px 0;
+    border: 1px solid lightgray;
+    border-left: none;
+    background-color: rgb(245, 245, 245);
+}
+
+#search-form button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+#btn-menu {
+    background-color: white;
+    border: none;
+}
+
+#btn-menu {
+    cursor: pointer;
+}
+
+.profile-pic {
+    font-size: 1.2rem;
+    background-color: purple;
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.btn-basic {
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.btn-basic:hover {
+    cursor: pointer;
+    background-color: lightgray !important;
+}
