@@ -3,16 +3,24 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+    const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+
+    function toggleSidebarVisibility() {
+        setIsSidebarVisible(!isSidebarVisible);
+    }
+
     return (
         <>
-            <header className="header">
+            <header id="header">
                 <div>
-                    <button id="btn-nav" className="btn-basic">
+                    <button id="btn-nav" className="btn-basic" onClick={() => toggleSidebarVisibility()}>
                         <i className="fa-solid fa-bars"></i>
                     </button>
                     <h1 id="brand">
-                        <i className="fa-brands fa-youtube"></i>
-                        <a href="/">YT Clone</a>
+                        <a href="">
+                            <i className="fa-brands fa-youtube"></i>
+                            <span>YT Clone</span>
+                        </a>
                     </h1>
                 </div>
                 <div>
@@ -25,7 +33,7 @@ function App() {
                 </div>
                 <div>
                     <button id="btn-create" className="btn-basic">
-                        <i class="fa-solid fa-film"></i>
+                        <i className="fa-solid fa-video"></i>
                     </button>
                     <button id="btn-notifications" className="btn-basic">
                         <i className="fa-regular fa-bell"></i>
@@ -35,45 +43,85 @@ function App() {
                     </button>
                 </div>
             </header>
-            <nav>
+
+            <nav id="sidebar">
                 <div>
-                    <a href="">Home</a>
-                    <a href="">Shorts</a>
-                    <a href="">Subscriptions</a>
+                    <a href="" className="nav-link">
+                        <i className="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-solid fa-film"></i>
+                        <span>Shorts</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-address-book"></i>
+                        <span>Subscriptions</span>
+                    </a>
                 </div>
                 <div>
-                    <h2>
-                        <a href="">You </a>
-                    </h2>
-                    <a href="">Your channel</a>
-                    <a href="">History</a>
-                    <a href="">Playlists</a>
-                    <a href="">Your Videos</a>
-                    <a href="">Watch Later</a>
-                    <a href="">Liked Videos</a>
+                    <a href="" id="profile-link">
+                        <h2 className="nav-header">You</h2>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-circle-user"></i>
+                        <span>Your channel</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-solid fa-clock-rotate-left"></i>
+                        <span>History</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-solid fa-list"></i>
+                        <span>Playlists</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-circle-play"></i>
+                        <span>Your Videos</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-clock"></i>
+                        <span>Watch Later</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-thumbs-up"></i>
+                        <span>Liked Videos</span>
+                    </a>
                 </div>
                 <div>
-                    <h2>Subscriptions</h2>
+                    <h2 className="nav-header">Subscriptions</h2>
                     <ul>
                         <li>
-                            <a href="">
-                                <img src="" alt="" />
+                            <a href="" className="nav-link">
+                                <img src="/images/default_user_image.jpg" alt="" className="profile-img" />
                                 <span>Jeikage</span>
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="" alt="" />
+                            <a href="" className="nav-link">
+                                <img src="/images/default_user_image.jpg" alt="" className="profile-img" />
                                 <span>IWinToLoseGaming</span>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <a href="">Settings</a>
-                    <a href="">Report History</a>
-                    <a href="">Help</a>
-                    <a href="">Send Feedback</a>
+                    <a href="" className="nav-link">
+                        <i className="fa-solid fa-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-flag"></i>
+                        <span>Report History</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-regular fa-circle-question"></i>
+                        <span>Help</span>
+                    </a>
+                    <a href="" className="nav-link">
+                        <i className="fa-solid fa-circle-exclamation"></i>
+                        <span>Send Feedback</span>
+                    </a>
                 </div>
             </nav>
             <div>
