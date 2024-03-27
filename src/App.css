@@ -3,6 +3,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     overflow: hidden;
+    background-color: white;
 }
 
 a {
@@ -64,4 +65,20 @@ ul {
 .btn-basic:hover {
     cursor: pointer;
     background-color: lightgray !important;
+}
+
+.flex-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#contents {
+    padding: 10px 0;
+    padding-left: 10px;
+    width: calc(100% - 11px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-y: scroll;
+    gap: 25px 10px;
+    height: calc(100vh - 56px);
 }
