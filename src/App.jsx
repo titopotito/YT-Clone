@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import MainHeader from "./components/MainHeader/MainHeader";
 import Sidebar from "./components/Sidebar/Sidebar";
-import VideoEntry from "./components/VideoEntry/VideoEntry";
+import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
@@ -18,20 +19,9 @@ function App() {
                 <Sidebar isSidebarVisible={isSidebarVisible} />
 
                 <div>
-                    <main>
-                        <ul id="contents">
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                            <VideoEntry />
-                        </ul>
-                    </main>
+                    <Routes>
+                        <Route path="/" element={<Home />}></Route>
+                    </Routes>
                 </div>
             </div>
         </>
