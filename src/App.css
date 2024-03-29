@@ -55,7 +55,7 @@ ul {
     grid-template-columns: auto 1fr;
 }
 
-.btn-basic {
+.btn-icon {
     border: none;
     border-radius: 50%;
     font-size: 1.2rem;
@@ -67,7 +67,7 @@ ul {
     background-color: white;
 }
 
-.btn-basic:hover {
+.btn-icon:hover {
     cursor: pointer;
     background-color: lightgray !important;
 }
@@ -161,6 +161,8 @@ ul {
     padding: 7px;
     border-radius: 20px;
     transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
 
 .btn-dislike-no-bg button:hover {

@@ -1,0 +1,11 @@
+.video-item > a {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.video-item img {
+    width: 150px;
+    border-radius: 10px;
+}

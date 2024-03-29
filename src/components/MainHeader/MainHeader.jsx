@@ -4,7 +4,7 @@ export default function MainHeader({ toggleSidebarVisibility }) {
     return (
         <header id="header">
             <div>
-                <button id="btn-nav" className="btn-basic" onClick={() => toggleSidebarVisibility()}>
+                <button id="btn-nav" className="btn-icon" onClick={() => toggleSidebarVisibility()}>
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <h1 id="brand">
@@ -23,10 +23,10 @@ export default function MainHeader({ toggleSidebarVisibility }) {
                 </form>
             </div>
             <div>
-                <button id="btn-create" className="btn-basic">
+                <button id="btn-create" className="btn-icon">
                     <i className="fa-solid fa-video"></i>
                 </button>
-                <button id="btn-notifications" className="btn-basic">
+                <button id="btn-notifications" className="btn-icon">
                     <i className="fa-regular fa-bell"></i>
                 </button>
                 <button id="btn-menu">

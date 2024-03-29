@@ -10,6 +10,10 @@
     gap: 8px;
 }
 
+#main-video {
+    border-radius: 10px;
+}
+
 #main-video-title {
     margin: 5px 0;
 }
@@ -73,6 +77,8 @@
 #btn-dislike i {
     font-size: 1.1rem;
     transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
 
 #btn-dislike:hover {

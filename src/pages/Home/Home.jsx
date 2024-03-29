@@ -4,7 +4,7 @@ import "./Home.css";
 
 export default function ({ isSidebarVisible }) {
     return (
-        <div className="flex-container">
+        <div id="home-page-container">
             <Sidebar isSidebarVisible={isSidebarVisible} />
             <div>
                 <main>

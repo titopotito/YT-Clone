@@ -4,7 +4,7 @@ import "./MainContent.css";
 export default function MainContent() {
     return (
         <main id="main-content">
-            <video src="/videos/marmar.mp4" width="780" height="440">
+            <video src="/videos/marmar.mp4" width="780" height="440" id="main-video">
                 Your browser does not support the video tag.
             </video>
             <h3 id="main-video-title">Marmar</h3>
@@ -20,7 +20,7 @@ export default function MainContent() {
                     <button className="btn-round">
                         <i className="fa-regular fa-bell"></i>
                         <span> Subscribe</span>
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <i className="fa-solid fa-chevron-down"></i>
                     </button>
                 </div>
                 <div id="actions">
@@ -39,7 +39,7 @@ export default function MainContent() {
                         <span>Share</span>
                     </button>
                     <button className="btn-round">
-                        <i class="fa-solid fa-download"></i>
+                        <i className="fa-solid fa-download"></i>
                         <span>Download</span>
                     </button>
                     <button className="btn-round">

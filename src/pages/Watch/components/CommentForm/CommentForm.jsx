@@ -9,7 +9,7 @@ export default function CommentForm() {
                 <div className="comment-form-btns">
                     <div>
                         <button className="btn-round-no-bg">
-                            <i class="fa-regular fa-face-smile"></i>
+                            <i className="fa-regular fa-face-smile"></i>
                         </button>
                     </div>
                     <div>

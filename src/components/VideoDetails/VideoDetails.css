@@ -1,0 +1,13 @@
+.video-title {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.video-creator-username {
+    font-size: 0.8rem;
+}
+
+.video-views,
+.video-timestamp {
+    font-size: 0.8rem;
+}

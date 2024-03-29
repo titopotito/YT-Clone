@@ -4,6 +4,9 @@
     justify-content: space-between;
     height: 56px;
     padding: 0 10px;
+    position: fixed;
+    width: calc(100% - 20px);
+    background-color: white;
 }
 
 #header > div {
@@ -29,7 +32,7 @@
 }
 
 #search-form {
-    width: 360px;
+    width: 480px;
     display: flex;
 }
 
