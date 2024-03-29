@@ -1,0 +1,33 @@
+.comment-form {
+    display: flex;
+}
+
+.comment-form form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.comment-form input:focus {
+    border-bottom: 2px solid black;
+}
+
+.comment-form-btns {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+.comment-form-btns > div:last-child {
+    display: flex;
+    gap: 10px;
+}

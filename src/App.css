@@ -19,12 +19,6 @@ ul {
     margin: 0;
 }
 
-.profile-img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -38,6 +32,12 @@ ul {
     border-radius: 5px;
 }
 
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .profile-pic {
     font-size: 1.2rem;
     background-color: purple;
@@ -48,6 +48,11 @@ ul {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+}
+
+.flex-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
 .btn-basic {
@@ -67,7 +72,98 @@ ul {
     background-color: lightgray !important;
 }
 
-.flex-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
+.btn-round {
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-round:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.btn-round-no-bg {
+    padding: 10px;
+    border-radius: 20px;
+    background: none;
+    border: none;
+}
+
+.btn-round-no-bg:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.btn-round-no-bg i {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-round-no-bg span {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.btn-round-no-bg:disabled {
+    background-color: lightgray;
+    cursor: default;
+}
+
+.btn-like-no-bg {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.btn-like-no-bg span {
+    font-size: 0.7rem;
+}
+
+.btn-like-no-bg button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.btn-like-no-bg button:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.btn-dislike-no-bg {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.btn-dislike-no-bg span {
+    font-size: 0.7rem;
+}
+
+.btn-dislike-no-bg button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    padding: 7px;
+    border-radius: 20px;
+    transform: rotate(180deg);
+}
+
+.btn-dislike-no-bg button:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
 }

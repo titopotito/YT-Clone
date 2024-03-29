@@ -1,0 +1,20 @@
+.comment-item {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-details a {
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.comment-details span {
+    color: gray;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.comment-text p {
+    margin: 5px 0;
+    font-size: 0.8rem;
+}

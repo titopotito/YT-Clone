@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import MainHeader from "./components/MainHeader/MainHeader";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
+import Watch from "./pages/Watch/Watch";
 import "./App.css";
 
 function App() {
@@ -15,15 +15,10 @@ function App() {
     return (
         <>
             <MainHeader toggleSidebarVisibility={toggleSidebarVisibility} />
-            <div className="flex-container">
-                <Sidebar isSidebarVisible={isSidebarVisible} />
-
-                <div>
-                    <Routes>
-                        <Route path="/" element={<Home />}></Route>
-                    </Routes>
-                </div>
-            </div>
+            <Routes>
+                <Route path="/" element={<Home isSidebarVisible={isSidebarVisible} />} />
+                <Route path="/watch" element={<Watch />} />
+            </Routes>
         </>
     );
 }

@@ -1,0 +1,35 @@
+body {
+    overflow-y: scroll !important;
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: 780px;
+    padding: 0 60px;
+}
+
+.btn-open-reply-form {
+    display: flex;
+    align-items: center;
+}
+
+.btn-view-replies {
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    background: none;
+    border: none;
+}
+
+.btn-view-replies:hover {
+    cursor: pointer;
+    background-color: #def1ff;
+}
+
+.btn-view-replies span {
+    font-weight: 600;
+}

@@ -1,0 +1,21 @@
+#comment-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#comment-header button {
+    background: none;
+    display: flex;
+    gap: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+#comment-header button i {
+    transform: rotate(90deg) scaleX(-1);
+}
+
+#comment-header button:hover {
+    cursor: pointer;
+}
