@@ -1,17 +1,32 @@
-body {
-    overflow-y: scroll !important;
-}
-
 #watch-page-container {
     display: flex;
     justify-content: center;
+    overflow-y: scroll;
+    position: relative;
+    top: 56px;
+    padding-top: 14px;
+    height: calc(100vh - 70px);
+}
+
+#watch-page-container #sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
 }
 
 #watch-page-container > div {
     display: grid;
     grid-template-columns: 780px 360px;
     gap: 0 20px;
-    padding-top: 70px;
+}
+
+#watch-page-container #overlay-mask {
+    position: fixed;
+    background-color: black;
+    left: 220px;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.2;
 }
 
 .banner {
@@ -29,25 +44,4 @@ body {
 .btn-open-reply-form {
     display: flex;
     align-items: center;
-}
-
-.btn-view-replies {
-    color: blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 20px;
-    padding: 10px;
-    background: none;
-    border: none;
-}
-
-.btn-view-replies:hover {
-    cursor: pointer;
-    background-color: #def1ff;
-}
-
-.btn-view-replies span {
-    font-weight: 600;
 }

@@ -169,3 +169,24 @@ ul {
     cursor: pointer;
     background-color: #f0f0f0;
 }
+
+.btn-blue {
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    background: none;
+    border: none;
+}
+
+.btn-blue:hover {
+    cursor: pointer;
+    background-color: #def1ff;
+}
+
+.btn-blue span {
+    font-weight: 600;
+}

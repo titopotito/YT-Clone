@@ -10,7 +10,7 @@ export default function MainHeader({ toggleSidebarVisibility }) {
                 <h1 id="brand">
                     <a href="">
                         <i className="fa-brands fa-youtube"></i>
-                        <span>YT Barebones</span>
+                        <span>YT Bones</span>
                     </a>
                 </h1>
             </div>

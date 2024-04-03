@@ -1,5 +1,5 @@
-import VideoEntry from "../../components/VideoEntry/VideoEntry";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import VideoGrid from "../../components/VideoGrid/VideoGrid";
 import "./Home.css";
 
 export default function ({ isSidebarVisible }) {
@@ -8,18 +8,7 @@ export default function ({ isSidebarVisible }) {
             <Sidebar isSidebarVisible={isSidebarVisible} />
             <div>
                 <main>
-                    <ul id="contents">
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                        <VideoEntry />
-                    </ul>
+                    <VideoGrid />
                 </main>
             </div>
         </div>

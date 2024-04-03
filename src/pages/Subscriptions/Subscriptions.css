@@ -1,0 +1,25 @@
+#subscriptions-page-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 56px);
+    position: relative;
+    top: 56px;
+}
+
+#subscriptions-page-container > div {
+    overflow-y: scroll;
+}
+
+#subscriptions-page-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+#subscriptions-page-header > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

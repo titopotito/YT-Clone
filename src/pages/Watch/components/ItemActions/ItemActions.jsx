@@ -23,7 +23,7 @@ export default function ItemActions() {
                 </span>
             </div>
             <div>
-                <button className="btn-view-replies">
+                <button className="btn-blue">
                     <i className="fa-solid fa-caret-down"></i>
                     <span>3 replies</span>
                 </button>

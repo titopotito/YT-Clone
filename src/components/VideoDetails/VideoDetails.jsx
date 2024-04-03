@@ -1,3 +1,5 @@
+import "./VideoDetails.css";
+
 export default function VideoDetails() {
     return (
         <div className="video-details">

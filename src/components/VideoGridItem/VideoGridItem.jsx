@@ -1,9 +1,9 @@
 import VideoDetails from "../VideoDetails/VideoDetails";
-import "./VideoEntry.css";
+import "./VideoGridItem.css";
 
-export default function VideoEntry() {
+export default function VideoGridItem() {
     return (
-        <li className="video-entry">
+        <li className="video-grid-item">
             <a href="">
                 <figure>
                     <img src="/images/dog.jpg" alt="" className="video-thumbnail" />

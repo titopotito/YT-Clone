@@ -1,14 +1,14 @@
-.video-entry {
+.video-grid-item {
     height: 320px;
 }
-.video-entry > a {
+.video-grid-item > a {
     display: flex;
     flex-direction: column;
     gap: 10px;
     color: black;
 }
 
-.video-entry figure {
+.video-grid-item figure {
     margin: 0;
 }
 
@@ -21,18 +21,4 @@
 .video-details-wrapper {
     display: flex;
     gap: 10px;
-}
-
-.video-title {
-    margin: 0;
-    font-size: 1rem;
-}
-
-.video-creator-username {
-    font-size: 0.8rem;
-}
-
-.video-views,
-.video-timestamp {
-    font-size: 0.8rem;
 }

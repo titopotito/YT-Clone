@@ -1,16 +1,11 @@
 #home-page-container {
     display: grid;
     grid-template-columns: auto 1fr;
-    padding-top: 56px;
+    height: calc(100vh - 56px);
+    position: relative;
+    top: 56px;
 }
 
-#contents {
-    padding: 10px 0;
-    padding-left: 10px;
-    width: calc(100% - 11px);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+#home-page-container > div {
     overflow-y: scroll;
-    gap: 25px 10px;
-    height: calc(100vh - 56px);
 }
