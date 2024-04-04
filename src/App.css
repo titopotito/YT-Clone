@@ -201,6 +201,7 @@ ul {
     background-color: #def1ff;
 }
 
-.btn-blue span {
+.btn-blue * {
+    color: blue;
     font-weight: 600;
 }

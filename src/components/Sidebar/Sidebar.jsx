@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 export default function Sidebar({ isSidebarVisible }) {
@@ -5,18 +6,18 @@ export default function Sidebar({ isSidebarVisible }) {
         return (
             <nav id="sidebar">
                 <div>
-                    <a href="" className="nav-link">
+                    <Link to={"/"} className="nav-link">
                         <i className="fa-solid fa-house"></i>
                         <span>Home</span>
-                    </a>
-                    <a href="" className="nav-link">
+                    </Link>
+                    <Link to={"/shorts"} className="nav-link">
                         <i className="fa-solid fa-film"></i>
                         <span>Shorts</span>
-                    </a>
-                    <a href="" className="nav-link">
+                    </Link>
+                    <Link to={"/subscriptions"} className="nav-link">
                         <i className="fa-regular fa-address-book"></i>
                         <span>Subscriptions</span>
-                    </a>
+                    </Link>
                 </div>
                 <div>
                     <a href="" id="profile-link">
@@ -31,10 +32,10 @@ export default function Sidebar({ isSidebarVisible }) {
                         <i className="fa-solid fa-clock-rotate-left"></i>
                         <span>History</span>
                     </a>
-                    <a href="" className="nav-link">
+                    <Link to={"/playlists"} className="nav-link">
                         <i className="fa-solid fa-list"></i>
                         <span>Playlists</span>
-                    </a>
+                    </Link>
                     <a href="" className="nav-link">
                         <i className="fa-regular fa-circle-play"></i>
                         <span>Your Videos</span>
@@ -88,18 +89,18 @@ export default function Sidebar({ isSidebarVisible }) {
     } else {
         return (
             <nav id="sidebar-min">
-                <a href="" className="nav-link-btn">
+                <Link to={"/"} className="nav-link-btn">
                     <i className="fa-solid fa-house"></i>
                     <span>Home</span>
-                </a>
-                <a href="" className="nav-link-btn">
+                </Link>
+                <Link to={"/shorts"} className="nav-link-btn">
                     <i className="fa-solid fa-film"></i>
                     <span>Shorts</span>
-                </a>
-                <a href="" className="nav-link-btn">
+                </Link>
+                <Link to={"/subscriptions"} className="nav-link-btn">
                     <i className="fa-regular fa-address-book"></i>
                     <span>Subscriptions</span>
-                </a>
+                </Link>
                 <a href="" className="nav-link-btn">
                     <i className="fa-solid fa-house-user"></i>
                     <span>You</span>

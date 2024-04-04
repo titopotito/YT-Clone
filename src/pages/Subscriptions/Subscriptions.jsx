@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import VideoGrid from "../../components/VideoGrid/VideoGrid";
 import "./Subscriptions.css";
@@ -9,7 +10,7 @@ export default function Subscriptions({ isSidebarVisible }) {
                 <h3>Latest</h3>
                 <div>
                     <button className="btn-blue">
-                        <span>Manage</span>
+                        <Link to={"/channels"}>Manage</Link>
                     </button>
                     <button className="btn-icon">
                         <i className="fa-solid fa-grip"></i>
