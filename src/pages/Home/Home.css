@@ -1,11 +1,4 @@
-#home-page-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    height: calc(100vh - 56px);
-    position: relative;
-    top: 56px;
-}
-
-#home-page-container > div {
+#feed-section {
     overflow-y: scroll;
+    height: inherit;
 }

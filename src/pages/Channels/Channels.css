@@ -1,11 +1,4 @@
-#channels-page-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    height: calc(100vh - 56px);
-    position: relative;
-    top: 56px;
-}
-
-#channels-page-container main {
+#channels-list {
     overflow-y: scroll;
+    height: inherit;
 }

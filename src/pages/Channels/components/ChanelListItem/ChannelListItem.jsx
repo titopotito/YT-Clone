@@ -2,7 +2,7 @@ import "./ChannelListItem.css";
 
 export default function ChannelListItem() {
     return (
-        <li id="channel-list-item">
+        <li className="channel-list-item">
             <a href="">
                 <figure>
                     <img src="/images/default_user_image.jpg" alt="" />

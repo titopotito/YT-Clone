@@ -1,12 +1,4 @@
-#subscriptions-page-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    height: calc(100vh - 56px);
-    position: relative;
-    top: 56px;
-}
-
-#subscriptions-page-container > div {
+#subscriptions-page {
     overflow-y: scroll;
 }
 
