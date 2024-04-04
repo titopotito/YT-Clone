@@ -21,7 +21,7 @@ export default function Sidebar({ isSidebarVisible }) {
                 <div>
                     <a href="" id="profile-link">
                         <h2 className="nav-header">You</h2>
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                     </a>
                     <a href="" className="nav-link">
                         <i className="fa-regular fa-circle-user"></i>
