@@ -15,7 +15,7 @@ export default function Playlists({ isSidebarVisible }) {
     return (
         <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"playlists-page"}>
             <h2>Playlists</h2>
-            <div>
+            <div className="dropdown-container">
                 <button className="btn-round" onClick={() => toggleSortDropdownVisibility()}>
                     <span>{sortOption}</span>
                     <i className="fa-solid fa-chevron-down"></i>

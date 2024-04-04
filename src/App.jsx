@@ -24,7 +24,11 @@ function App() {
                 <Route
                     path="/watch"
                     element={
-                        <Watch isSidebarVisible={isSidebarVisible} toggleSidebarVisibility={toggleSidebarVisibility} />
+                        <Watch
+                            isSidebarVisible={isSidebarVisible}
+                            toggleSidebarVisibility={toggleSidebarVisibility}
+                            setIsSidebarVisible={setIsSidebarVisible}
+                        />
                     }
                 />
                 <Route path="/subscriptions" element={<Subscriptions isSidebarVisible={isSidebarVisible} />} />

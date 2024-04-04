@@ -1,11 +1,11 @@
-.channel-list-item a {
+.channel-list-item {
     display: grid;
     grid-template-columns: 400px 400px 200px;
     height: 160px;
     padding-left: 100px;
 }
 
-.channel-list-item a > * {
+.channel-list-item > * {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    position: relative;
 }
 
 .channel-details > p {

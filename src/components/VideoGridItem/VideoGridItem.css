@@ -1,12 +1,6 @@
 .video-grid-item {
     height: 320px;
 }
-.video-grid-item > a {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: black;
-}
 
 .video-grid-item figure {
     margin: 0;
@@ -21,4 +15,5 @@
 .video-details-wrapper {
     display: flex;
     gap: 10px;
+    margin: 5px 0;
 }

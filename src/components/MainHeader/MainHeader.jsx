@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./MainHeader.css";
 
 export default function MainHeader({ toggleSidebarVisibility }) {
@@ -8,10 +9,10 @@ export default function MainHeader({ toggleSidebarVisibility }) {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <h1 id="brand">
-                    <a href="">
+                    <Link to={"/"}>
                         <i className="fa-brands fa-youtube"></i>
                         <span>YT Bones</span>
-                    </a>
+                    </Link>
                 </h1>
             </div>
             <div>

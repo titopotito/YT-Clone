@@ -9,9 +9,10 @@ export default function Subscriptions({ isSidebarVisible }) {
             <div id="subscriptions-page-header">
                 <h3>Latest</h3>
                 <div>
-                    <button className="btn-blue">
-                        <Link to={"/channels"}>Manage</Link>
-                    </button>
+                    <Link to={"/channels"} className="btn-blue">
+                        <span>Manage</span>
+                    </Link>
+
                     <button className="btn-icon">
                         <i className="fa-solid fa-grip"></i>
                     </button>

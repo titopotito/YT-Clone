@@ -1,12 +1,24 @@
+import { useState } from "react";
 import "./ChannelListItem.css";
 
 export default function ChannelListItem() {
+    const SortOptions = { ALL: "All", PERSONALIZE: "Personalize", NONE: "None", UNSUBSCRIBE: "Unsubscribe" };
+
+    const [sortOption, setSortOption] = useState(SortOptions[1]);
+    const [isSortDropdownVisible, setIsSortDropdownVisible] = useState(false);
+
+    function toggleSortDropdownVisibility() {
+        setIsSortDropdownVisible(!isSortDropdownVisible);
+    }
+
     return (
         <li className="channel-list-item">
             <a href="">
                 <figure>
                     <img src="/images/default_user_image.jpg" alt="" />
                 </figure>
+            </a>
+            <a href="">
                 <div className="channel-details">
                     <h3>Jeikage</h3>
                     <div>
@@ -20,14 +32,48 @@ export default function ChannelListItem() {
                         laboris adipisicing enim anim et voluptate minim occaecat laborum cupidatat sit sunt sint.
                     </p>
                 </div>
-                <div>
-                    <button className="btn-round">
+            </a>
+            <div>
+                <div className="dropdown-container">
+                    <button className="btn-round" onClick={() => toggleSortDropdownVisibility()}>
                         <i className="fa-regular fa-bell"></i>
-                        <span> Subscribe</span>
+                        <span>Subscribed</span>
                         <i className="fa-solid fa-chevron-down"></i>
                     </button>
+                    {isSortDropdownVisible ? (
+                        <Dropdown
+                            SortOptions={SortOptions}
+                            toggleSortDropdownVisibility={toggleSortDropdownVisibility}
+                            setSortOption={setSortOption}
+                        />
+                    ) : (
+                        <></>
+                    )}
                 </div>
-            </a>
+            </div>
         </li>
+    );
+}
+
+function Dropdown({ SortOptions, toggleSortDropdownVisibility, setSortOption }) {
+    return (
+        <ul className="dropdown">
+            <li>
+                <i className="fa-solid fa-bell"></i>
+                <span>{SortOptions.ALL}</span>
+            </li>
+            <li>
+                <i className="fa-regular fa-bell"></i>
+                <span>{SortOptions.PERSONALIZE}</span>
+            </li>
+            <li>
+                <i className="fa-regular fa-bell-slash"></i>
+                <span>{SortOptions.NONE}</span>
+            </li>
+            <li>
+                <i className="fa-solid fa-user-minus"></i>
+                <span>{SortOptions.UNSUBSCRIBE}</span>
+            </li>
+        </ul>
     );
 }
