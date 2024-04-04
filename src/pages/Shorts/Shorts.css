@@ -1,0 +1,20 @@
+#shorts-page-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 56px);
+    position: relative;
+    top: 56px;
+}
+
+#shorts-page-container main {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+
+#shorts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

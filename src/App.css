@@ -62,6 +62,12 @@ ul {
     justify-content: center;
 }
 
+.dislike {
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
 .btn-icon {
     border: none;
     border-radius: 50%;
@@ -85,6 +91,7 @@ ul {
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
 }
 

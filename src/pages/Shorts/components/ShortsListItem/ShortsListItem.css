@@ -1,0 +1,39 @@
+.shorts-list-item {
+    display: flex;
+    gap: 15px;
+}
+
+.shorts-list-item video {
+    width: 300px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.shorts-list-item > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.shorts-list-item > div > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.shorts-list-item button {
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+    font-size: 1.3rem;
+}
+
+.shorts-list-item img {
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+}

@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Watch from "./pages/Watch/Watch";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
 import Channels from "./pages/Channels/Channels";
+import Shorts from "./pages/Shorts/Shorts";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 />
                 <Route path="/subscriptions" element={<Subscriptions isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/channels" element={<Channels isSidebarVisible={isSidebarVisible} />} />
+                <Route path="/shorts" element={<Shorts isSidebarVisible={isSidebarVisible} />} />
             </Routes>
         </>
     );
