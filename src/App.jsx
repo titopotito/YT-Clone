@@ -3,8 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import MainHeader from "./components/MainHeader/MainHeader";
 import Home from "./pages/Home/Home";
 import Watch from "./pages/Watch/Watch";
-import "./App.css";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
+import Channels from "./pages/Channels/Channels";
+import "./App.css";
 
 function App() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(true);
@@ -25,6 +26,7 @@ function App() {
                     }
                 />
                 <Route path="/subscriptions" element={<Subscriptions isSidebarVisible={isSidebarVisible} />} />
+                <Route path="/channels" element={<Channels isSidebarVisible={isSidebarVisible} />} />
             </Routes>
         </>
     );
