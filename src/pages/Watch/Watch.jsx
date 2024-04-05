@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import CommentSection from "./components/CommentSection/CommentSection";
 import MainContent from "./components/MainContent/MainContent";
-import VideoList from "./components/VideoList/VideoList";
+import VideoList from "../../components/VideoList/VideoList";
 import "./Watch.css";
 
 export default function Watch({ isSidebarVisible, toggleSidebarVisibility, setIsSidebarVisible }) {

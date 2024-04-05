@@ -1,5 +1,5 @@
-import DetailsContainer from "../../../../components/DetailsContainer/DetailsContainer";
-import InfoContainer from "../../../../components/InfoContainer/InfoContainer";
+import DetailsContainer from "../../../DetailsContainer/DetailsContainer";
+import InfoContainer from "../../../InfoContainer/InfoContainer";
 import "./VideoItem.css";
 
 export default function VideoItem() {

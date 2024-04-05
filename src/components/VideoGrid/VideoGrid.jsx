@@ -1,4 +1,4 @@
-import VideoGridItem from "../VideoGridItem/VideoGridItem";
+import VideoGridItem from "./components/VideoGridItem/VideoGridItem";
 import "./VideoGrid.css";
 
 export default function VideoGrid() {

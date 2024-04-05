@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import VideoDetails from "../VideoDetails/VideoDetails";
+import DetailsContainer from "../../../DetailsContainer/DetailsContainer";
+import InfoContainer from "../../../InfoContainer/InfoContainer";
 import "./VideoGridItem.css";
-import DetailsContainer from "../DetailsContainer/DetailsContainer";
-import InfoContainer from "../InfoContainer/InfoContainer";
 
 export default function VideoGridItem() {
     return (

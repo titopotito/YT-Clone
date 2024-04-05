@@ -1,4 +1,4 @@
-import VideoItem from "../VideoItem/VideoItem";
+import VideoItem from "./components/VideoItem/VideoItem";
 import "./VideoList.css";
 
 export default function VideoList() {
