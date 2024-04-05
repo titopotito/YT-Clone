@@ -9,7 +9,7 @@ export default function CommentSection() {
                 <h3>
                     <span>518</span> Comments
                 </h3>
-                <button>
+                <button className="btn-sort">
                     <i className="fa-solid fa-signal"></i>
                     <span>Sort by</span>
                 </button>

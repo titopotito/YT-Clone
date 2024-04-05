@@ -231,3 +231,21 @@ ul {
     font-weight: 600;
     font-size: 0.82rem;
 }
+
+.btn-sort {
+    background: none;
+    display: flex;
+    gap: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-sort i {
+    transform: rotate(90deg) scaleX(-1);
+    -moz-transform: rotate(90deg) scaleX(-1);
+    -webkit-transform: rotate(90deg) scaleX(-1);
+}
+
+.btn-sort:hover {
+    cursor: pointer;
+}
