@@ -67,7 +67,8 @@
 }
 
 #playlist-header-row-5 {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
     gap: 5px;
     margin-bottom: 15px;

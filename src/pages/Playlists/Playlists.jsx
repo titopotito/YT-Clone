@@ -2,34 +2,29 @@ import { useState } from "react";
 import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import Playlist from "./Playlist/Playlist";
 import "./Playlists.css";
+import DropdownContainer from "../../components/DropdownContainer/DropdownContainer";
+
+const OPTIONS = { RECENTLY_ADDED: "Recently added", A_Z: "A-Z" };
 
 export default function Playlists({ isSidebarVisible }) {
-    const SortOptions = { RECENTLY_ADDED: "Recently added", A_Z: "A-Z" };
-    const [sortOption, setSortOption] = useState(SortOptions.RECENTLY_ADDED);
+    const [sortOption, setSortOption] = useState(OPTIONS.RECENTLY_ADDED);
     const [isSortDropdownVisible, setIsSortDropdownVisible] = useState(false);
 
-    function toggleSortDropdownVisibility() {
-        setIsSortDropdownVisible(!isSortDropdownVisible);
+    function handeClick(option) {
+        setIsSortDropdownVisible(false);
+        setSortOption(option);
     }
 
     return (
         <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"playlists-page"}>
             <h2>Playlists</h2>
-            <div className="dropdown-container">
-                <button className="btn-round" onClick={() => toggleSortDropdownVisibility()}>
-                    <span>{sortOption}</span>
-                    <i className="fa-solid fa-chevron-down"></i>
-                </button>
-                {isSortDropdownVisible ? (
-                    <Dropdown
-                        SortOptions={SortOptions}
-                        toggleSortDropdownVisibility={toggleSortDropdownVisibility}
-                        setSortOption={setSortOption}
-                    />
-                ) : (
-                    <></>
-                )}
-            </div>
+            <DropdownContainer
+                btnConfig={{ className: "btn-round", text: sortOption, icon2: "fa-solid fa-chevron-down" }}
+            >
+                <li onClick={() => handeClick(OPTIONS.A_Z)}>{OPTIONS.A_Z}</li>
+                <li onClick={() => handeClick(OPTIONS.RECENTLY_ADDED)}>{OPTIONS.RECENTLY_ADDED}</li>
+            </DropdownContainer>
+
             <ul id="playlists">
                 <Playlist />
                 <Playlist />
@@ -48,18 +43,5 @@ export default function Playlists({ isSidebarVisible }) {
                 <Playlist />
             </ul>
         </DefaultPageContainer>
-    );
-}
-
-function Dropdown({ SortOptions, toggleSortDropdownVisibility, setSortOption }) {
-    function handeClick(option) {
-        toggleSortDropdownVisibility();
-        setSortOption(option);
-    }
-    return (
-        <ul className="dropdown">
-            <li onClick={() => handeClick(SortOptions.A_Z)}>{SortOptions.A_Z}</li>
-            <li onClick={() => handeClick(SortOptions.RECENTLY_ADDED)}>{SortOptions.RECENTLY_ADDED}</li>
-        </ul>
     );
 }

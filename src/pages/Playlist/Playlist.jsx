@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
 import DetailsContainer from "../../components/DetailsContainer/DetailsContainer";
+import DropdownContainer from "../../components/DropdownContainer/DropdownContainer";
 import "./Playlist.css";
+import { useRef, useState } from "react";
 
 export default function Playlist({ isSidebarVisible }) {
     return (
@@ -34,9 +36,7 @@ export default function Playlist({ isSidebarVisible }) {
                     <button className="btn-round">
                         <i class="fa-solid fa-download"></i>
                     </button>
-                    <button className="btn-round">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </button>
+                    <PlaylistOptionBtn />
                 </div>
                 <div id="playlist-header-row-6">
                     <button className="btn-round">
@@ -75,6 +75,49 @@ export default function Playlist({ isSidebarVisible }) {
                 </ul>
             </section>
         </DefaultPageContainer>
+    );
+}
+
+const VISIBILITY_OPTION = {
+    VISIBLE: { ICON: "fa-regular fa-eye", TEXT: "Show unavailable videos" },
+    NOT_VISIBLE: { ICON: "fa-regular fa-eye-slash", TEXT: "Hide unavailable videos" },
+};
+
+function PlaylistOptionBtn() {
+    const [visibilityOption, setVisibilityOption] = useState(VISIBILITY_OPTION.NOT_VISIBLE);
+
+    function toggleVisibilityOption() {
+        if (visibilityOption === VISIBILITY_OPTION.NOT_VISIBLE) setVisibilityOption(VISIBILITY_OPTION.VISIBLE);
+        else setVisibilityOption(VISIBILITY_OPTION.NOT_VISIBLE);
+    }
+
+    return (
+        <DropdownContainer btnConfig={{ className: "btn-round", icon1: "fa-solid fa-ellipsis-vertical" }}>
+            <li onClick={toggleVisibilityOption}>
+                <i class={visibilityOption.ICON}></i>
+                <span>{visibilityOption.TEXT}</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-plus"></i>
+                <span>Add videos</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-folder-plus"></i>
+                <span>Add all to...</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-users"></i>
+                <span>Collaborate</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                <span>Playlist Settings</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-trash-can"></i>
+                <span>Delete playlist</span>
+            </li>
+        </DropdownContainer>
     );
 }
 

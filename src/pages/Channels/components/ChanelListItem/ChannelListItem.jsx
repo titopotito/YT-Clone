@@ -2,17 +2,11 @@ import { useState } from "react";
 import "./ChannelListItem.css";
 import InfoContainer from "../../../../components/InfoContainer/InfoContainer";
 import DetailsContainer from "../../../../components/DetailsContainer/DetailsContainer";
+import DropdownContainer from "../../../../components/DropdownContainer/DropdownContainer";
+
+const OPTIONS = { ALL: "All", PERSONALIZE: "Personalize", NONE: "None", UNSUBSCRIBE: "Unsubscribe" };
 
 export default function ChannelListItem() {
-    const SortOptions = { ALL: "All", PERSONALIZE: "Personalize", NONE: "None", UNSUBSCRIBE: "Unsubscribe" };
-
-    const [sortOption, setSortOption] = useState(SortOptions[1]);
-    const [isSortDropdownVisible, setIsSortDropdownVisible] = useState(false);
-
-    function toggleSortDropdownVisibility() {
-        setIsSortDropdownVisible(!isSortDropdownVisible);
-    }
-
     return (
         <li className="channel-list-item">
             <a href="">
@@ -37,46 +31,33 @@ export default function ChannelListItem() {
                 </DetailsContainer>
             </a>
             <div>
-                <div className="dropdown-container">
-                    <button className="btn-round" onClick={() => toggleSortDropdownVisibility()}>
+                <DropdownContainer
+                    btnConfig={{
+                        className: "btn-round",
+                        icon1: "fa-regular fa-bell",
+                        text: "Subscribed",
+                        icon2: "fa-solid fa-chevron-down",
+                    }}
+                    hideOnClick={false}
+                >
+                    <li>
+                        <i className="fa-solid fa-bell"></i>
+                        <span>{OPTIONS.ALL}</span>
+                    </li>
+                    <li>
                         <i className="fa-regular fa-bell"></i>
-                        <span>Subscribed</span>
-                        <i className="fa-solid fa-chevron-down"></i>
-                    </button>
-                    {isSortDropdownVisible ? (
-                        <Dropdown
-                            SortOptions={SortOptions}
-                            toggleSortDropdownVisibility={toggleSortDropdownVisibility}
-                            setSortOption={setSortOption}
-                        />
-                    ) : (
-                        <></>
-                    )}
-                </div>
+                        <span>{OPTIONS.PERSONALIZE}</span>
+                    </li>
+                    <li>
+                        <i className="fa-regular fa-bell-slash"></i>
+                        <span>{OPTIONS.NONE}</span>
+                    </li>
+                    <li>
+                        <i className="fa-solid fa-user-minus"></i>
+                        <span>{OPTIONS.UNSUBSCRIBE}</span>
+                    </li>
+                </DropdownContainer>
             </div>
         </li>
-    );
-}
-
-function Dropdown({ SortOptions, toggleSortDropdownVisibility, setSortOption }) {
-    return (
-        <ul className="dropdown">
-            <li>
-                <i className="fa-solid fa-bell"></i>
-                <span>{SortOptions.ALL}</span>
-            </li>
-            <li>
-                <i className="fa-regular fa-bell"></i>
-                <span>{SortOptions.PERSONALIZE}</span>
-            </li>
-            <li>
-                <i className="fa-regular fa-bell-slash"></i>
-                <span>{SortOptions.NONE}</span>
-            </li>
-            <li>
-                <i className="fa-solid fa-user-minus"></i>
-                <span>{SortOptions.UNSUBSCRIBE}</span>
-            </li>
-        </ul>
     );
 }
