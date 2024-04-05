@@ -16,32 +16,3 @@
     width: 136px;
     height: 136px;
 }
-
-.channel-details {
-    align-items: flex-start !important;
-    font-size: 0.7rem;
-    font-weight: 400;
-    line-height: 20px;
-    color: #606060;
-}
-
-.channel-details h3 {
-    color: black;
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 5px 0;
-}
-
-.channel-details > div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    position: relative;
-}
-
-.channel-details > p {
-    margin: 3px 0;
-    max-height: 60px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}

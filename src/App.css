@@ -55,13 +55,6 @@ ul {
     grid-template-columns: auto 1fr;
 }
 
-.dot {
-    font-size: 0.2rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .dropdown-container {
     position: relative;
 }

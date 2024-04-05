@@ -1,9 +1,9 @@
 import React from "react";
-import "./InfoWrapper.css";
+import "./InfoContainer.css";
 
-export default function InfoWrapper({ children }) {
+export default function InfoContainer({ children, size }) {
     return (
-        <div className="info-wrapper">
+        <div className={size ? `info-container ${size}` : `info-container`}>
             {React.Children.map(children, (child, index) => {
                 if (index < children.length - 1) {
                     return (

@@ -1,9 +1,0 @@
-.info-wrapper {
-    display: flex;
-    gap: 5px;
-}
-
-.info-wrapper * {
-    color: #606060;
-    font-size: 0.7rem;
-}

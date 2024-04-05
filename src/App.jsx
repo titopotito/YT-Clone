@@ -6,8 +6,9 @@ import Watch from "./pages/Watch/Watch";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
 import Channels from "./pages/Channels/Channels";
 import Shorts from "./pages/Shorts/Shorts";
-import "./App.css";
 import Playlists from "./pages/Playlists/Playlists";
+import Playlist from "./pages/Playlist/Playlist";
+import "./App.css";
 
 function App() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(true);
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/channels" element={<Channels isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/shorts" element={<Shorts isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/playlists" element={<Playlists isSidebarVisible={isSidebarVisible} />} />
+                <Route path="/playlist" element={<Playlist isSidebarVisible={isSidebarVisible} />} />
             </Routes>
         </>
     );

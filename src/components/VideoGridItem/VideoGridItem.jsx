@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import "./VideoGridItem.css";
+import DetailsContainer from "../DetailsContainer/DetailsContainer";
+import InfoContainer from "../InfoContainer/InfoContainer";
 
 export default function VideoGridItem() {
     return (
@@ -14,7 +16,16 @@ export default function VideoGridItem() {
                 <Link>
                     <img src="/images/default_user_image.jpg" alt="" className="profile-img" />
                 </Link>
-                <VideoDetails />
+                <DetailsContainer>
+                    <h3 className="details-container-title">Video Title</h3>
+                    <InfoContainer>
+                        <span>Jeikage</span>
+                    </InfoContainer>
+                    <InfoContainer>
+                        <span>15K Views</span>
+                        <span>1 hour ago</span>
+                    </InfoContainer>
+                </DetailsContainer>
             </div>
         </li>
     );

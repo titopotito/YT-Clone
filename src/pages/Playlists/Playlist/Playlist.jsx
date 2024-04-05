@@ -1,19 +1,27 @@
+import DetailsContainer from "../../../components/DetailsContainer/DetailsContainer";
+import InfoContainer from "../../../components/InfoContainer/InfoContainer";
+import PlaylistThumbnail from "../PlaylistThumbnail/PlaylistThumbnail";
+import "./Playlist.css";
+
 export default function Playlist() {
     return (
         <li className="playlist">
             <a href="">
-                <img src="/images/dog.jpg" alt="" className="playlist-bg-1" />
-                <img src="/images/dog.jpg" alt="" className="playlist-bg-2" />
-                <img src="/images/dog.jpg" alt="" className="playlist-thumbnail" />
-                <div className="playlist-details">
-                    <h3>Liked Videos</h3>
-                    <div>
-                        Private <i className="fa-solid fa-circle dot"></i> Playlist
-                    </div>
-                    <div>Updated today</div>
-                </div>
+                <PlaylistThumbnail src={"/images/dog.jpg"} />
+                <DetailsContainer>
+                    <h3 className="details-container-title-small">Liked Videos</h3>
+                    <InfoContainer size={"small"}>
+                        <span>Private</span>
+                        <span>Playlist</span>
+                    </InfoContainer>
+                    <InfoContainer size={"small"}>
+                        <span>Updated today</span>
+                    </InfoContainer>
+                </DetailsContainer>
             </a>
-            <a href="">View full playlist</a>
+            <InfoContainer size={"small"}>
+                <a href="">View full playlist</a>
+            </InfoContainer>
         </li>
     );
 }

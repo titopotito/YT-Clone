@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./ChannelListItem.css";
+import InfoContainer from "../../../../components/InfoContainer/InfoContainer";
+import DetailsContainer from "../../../../components/DetailsContainer/DetailsContainer";
 
 export default function ChannelListItem() {
     const SortOptions = { ALL: "All", PERSONALIZE: "Personalize", NONE: "None", UNSUBSCRIBE: "Unsubscribe" };
@@ -19,19 +21,20 @@ export default function ChannelListItem() {
                 </figure>
             </a>
             <a href="">
-                <div className="channel-details">
-                    <h3>Jeikage</h3>
-                    <div>
+                <DetailsContainer>
+                    <h3 className="details-container-title">Jeikage</h3>
+                    <InfoContainer size={"small"}>
                         <span>@Jeikage </span>
-                        <i className="fa-solid fa-circle dot"></i>
                         <span>3.94K subscribers</span>
-                    </div>
-                    <p>
-                        Irure do aliqua veniam ipsum sit sunt ad sit nostrud mollit proident. Lorem velit aliquip
-                        reprehenderit irure velit magna. Exercitation occaecat cupidatat sit commodo. Cupidatat quis
-                        laboris adipisicing enim anim et voluptate minim occaecat laborum cupidatat sit sunt sint.
-                    </p>
-                </div>
+                    </InfoContainer>
+                    <InfoContainer size={"small"}>
+                        <p>
+                            Irure do aliqua veniam ipsum sit sunt ad sit nostrud mollit proident. Lorem velit aliquip
+                            reprehenderit irure velit magna. Exercitation occaecat cupidatat sit commodo. Cupidatat quis
+                            laboris adipisicing enim anim et voluptate minim occaecat laborum cupidatat sit sunt sint.
+                        </p>
+                    </InfoContainer>
+                </DetailsContainer>
             </a>
             <div>
                 <div className="dropdown-container">
