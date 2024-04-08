@@ -8,6 +8,7 @@ import Channels from "./pages/Channels/Channels";
 import Shorts from "./pages/Shorts/Shorts";
 import Playlists from "./pages/Playlists/Playlists";
 import Playlist from "./pages/Playlist/Playlist";
+import Results from "./pages/Results/Results";
 import "./App.css";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/shorts" element={<Shorts isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/playlists" element={<Playlists isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/playlist" element={<Playlist isSidebarVisible={isSidebarVisible} />} />
+                <Route path="/results" element={<Results isSidebarVisible={isSidebarVisible} />} />
             </Routes>
         </>
     );

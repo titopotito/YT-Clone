@@ -98,6 +98,10 @@ ul {
     border-radius: 20px;
     background: none;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .btn-round-no-bg:hover {

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
 import DetailsContainer from "../../components/DetailsContainer/DetailsContainer";
 import DropdownContainer from "../../components/DropdownContainer/DropdownContainer";
 import "./Playlist.css";
-import { useRef, useState } from "react";
 
 export default function Playlist({ isSidebarVisible }) {
     return (

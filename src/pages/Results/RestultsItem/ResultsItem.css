@@ -1,0 +1,39 @@
+.search-result-item {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+}
+
+.search-result-item > a {
+    width: 100%;
+}
+
+.search-result-thumbnail {
+    max-width: 460px;
+    max-height: 240px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 1.8/1;
+}
+
+.search-result-creator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.search-result-creator span {
+    font-size: 0.75rem;
+    color: #606060;
+}
+
+.search-result-creator span:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.search-result-item .dropdown-container .dropdown {
+    right: 0;
+}
