@@ -78,6 +78,28 @@ ul {
     background-color: lightgray !important;
 }
 
+.btn-basic {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.btn-basic:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.btn-basic.active {
+    background-color: black;
+    color: white;
+}
+
 .btn-round {
     padding: 10px 10px;
     border-radius: 20px;
@@ -220,4 +242,22 @@ ul {
 
 .btn-sort:hover {
     cursor: pointer;
+}
+
+.btn-tab {
+    padding: 0;
+    font-weight: 600;
+    color: #606060;
+    background: none;
+    border: none;
+}
+
+.btn-tab:hover {
+    border-bottom: 2px solid #606060;
+    cursor: pointer;
+}
+
+.btn-tab.active {
+    color: black;
+    border-bottom: 2px solid black;
 }

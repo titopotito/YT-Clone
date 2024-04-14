@@ -11,10 +11,18 @@
     color: black;
 }
 
+.details-container .details-container-title * {
+    color: black;
+}
+
 .details-container .details-container-title-small {
     margin: 0;
     margin-bottom: 5px;
     font-size: 0.88rem;
     font-weight: 500;
+    color: black;
+}
+
+.details-container .details-container-title-small * {
     color: black;
 }
