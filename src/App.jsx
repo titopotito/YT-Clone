@@ -10,7 +10,8 @@ import Playlists from "./pages/Playlists/Playlists";
 import Playlist from "./pages/Playlist/Playlist";
 import Results from "./pages/Results/Results";
 import "./App.css";
-import Channel from "./pages/Channel/Channel";
+import * as Channel from "./pages/Channel/Channel";
+import Videos from "./pages/Channel/Pages/Videos/Videos";
 
 function App() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(true);
@@ -40,7 +41,10 @@ function App() {
                 <Route path="/playlists" element={<Playlists isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/playlist" element={<Playlist isSidebarVisible={isSidebarVisible} />} />
                 <Route path="/results" element={<Results isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/channel" element={<Channel isSidebarVisible={isSidebarVisible} />} />
+                <Route path="/channel" element={<Channel.Layout isSidebarVisible={isSidebarVisible} />}>
+                    <Route index element={<Channel.Videos />} />
+                    <Route path="shorts" element={<Channel.Shorts />} />
+                </Route>
             </Routes>
         </>
     );

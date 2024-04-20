@@ -1,12 +1,13 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
 import Videos from "./Pages/Videos/Videos";
+import Shorts from "./Pages/Shorts/Shorts";
 import "./Channel.css";
-import VideoGrid from "../../components/VideoGrid/VideoGrid";
-import DetailsContainer from "../../components/DetailsContainer/DetailsContainer";
 
-export default function Channel({ isSidebarVisible }) {
+function Layout({ isSidebarVisible }) {
+    const location = useLocation();
+
     return (
         <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"channel-page"}>
             <div>
@@ -33,67 +34,30 @@ export default function Channel({ isSidebarVisible }) {
                     </div>
                 </div>
                 <div id="channel-page-tab-container">
-                    <button className="btn-tab active">Home</button>
-                    <button className="btn-tab">Videos</button>
-                    <button className="btn-tab">Shorts</button>
-                    <button className="btn-tab">Live</button>
-                    <button className="btn-tab">Playlists</button>
-                    <button className="btn-tab">Community</button>
+                    <button className={location.pathname === "/channel/home" ? "btn-tab active" : "btn-tab"}>
+                        Home
+                    </button>
+                    <button className={location.pathname === "/channel" ? "btn-tab active" : "btn-tab"}>Videos</button>
+                    <button className={location.pathname === "/channel/shorts" ? "btn-tab active" : "btn-tab"}>
+                        Shorts
+                    </button>
+                    <button className={location.pathname === "/channel/live" ? "btn-tab active" : "btn-tab"}>
+                        Live
+                    </button>
+                    <button className={location.pathname === "/channel/playlists" ? "btn-tab active" : "btn-tab"}>
+                        Playlists
+                    </button>
+                    <button className={location.pathname === "/channel/community" ? "btn-tab active" : "btn-tab"}>
+                        Community
+                    </button>
                     <button className="btn-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <div>
-                    <div id="channel-sort-btn-container">
-                        <button className="btn-basic active">
-                            <span>Latest</span>
-                        </button>
-                        <button className="btn-basic">
-                            <span>Popular</span>
-                        </button>
-                        <button className="btn-basic">
-                            <span>Oldest</span>
-                        </button>
-                    </div>
-                    {/* <VideoGrid /> */}
-                    <ul>
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                        <VideoItem />
-                    </ul>
-                </div>
+                <Outlet />
             </div>
         </DefaultPageContainer>
     );
 }
 
-function VideoItem() {
-    return (
-        <li>
-            <Link>
-                <img src="/images/dog.jpg" alt="" />
-            </Link>
-            <DetailsContainer>
-                <h5 className="details-container-title-small">
-                    <Link>This is the the title of the video and the video is about a dogaaaaadsf dsfsdfsdfsdf</Link>
-                </h5>
-                <InfoContainer size={"small"}>
-                    <Link>
-                        <span>1.3K views</span>
-                    </Link>
-                    <Link>
-                        <span>14 hours ago</span>
-                    </Link>
-                </InfoContainer>
-            </DetailsContainer>
-        </li>
-    );
-}
+export { Layout, Videos, Shorts };

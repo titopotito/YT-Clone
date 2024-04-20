@@ -1,0 +1,31 @@
+#channel-sort-btn-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#channel-page-videos ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+}
+
+#channel-page-videos ul img {
+    max-width: 230px;
+    object-fit: cover;
+    aspect-ratio: 1.8/1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#channel-page-videos ul li {
+    max-width: 230px;
+}
+
+.details-container-title-small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

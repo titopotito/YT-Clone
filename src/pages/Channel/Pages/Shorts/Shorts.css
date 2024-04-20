@@ -1,0 +1,18 @@
+#channel-page-shorts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    padding-top: 10px;
+}
+
+#channel-page-shorts li {
+    width: 190px;
+    margin-bottom: 15px;
+}
+
+#channel-page-shorts img {
+    width: 100%;
+    aspect-ratio: 1/1.77;
+    object-fit: cover;
+    border-radius: 10px;
+}

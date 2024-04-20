@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import DetailsContainer from "../../../components/DetailsContainer/DetailsContainer";
 import InfoContainer from "../../../components/InfoContainer/InfoContainer";
 import PlaylistThumbnail from "../PlaylistThumbnail/PlaylistThumbnail";
@@ -6,7 +7,7 @@ import "./Playlist.css";
 export default function Playlist() {
     return (
         <li className="playlist">
-            <a href="">
+            <Link>
                 <PlaylistThumbnail src={"/images/dog.jpg"} />
                 <DetailsContainer>
                     <h3 className="details-container-title-small">Liked Videos</h3>
@@ -18,9 +19,9 @@ export default function Playlist() {
                         <span>Updated today</span>
                     </InfoContainer>
                 </DetailsContainer>
-            </a>
+            </Link>
             <InfoContainer size={"small"}>
-                <a href="">View full playlist</a>
+                <Link>View full playlist</Link>
             </InfoContainer>
         </li>
     );
