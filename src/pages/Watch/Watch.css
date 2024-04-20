@@ -8,25 +8,10 @@
     height: calc(100vh - 70px);
 }
 
-#watch-page-container #sidebar {
-    position: fixed;
-    top: 56px;
-    left: 0;
-}
-
 #watch-page-container > div {
     display: grid;
     grid-template-columns: 780px 360px;
     gap: 0 20px;
-}
-
-#watch-page-container #overlay-mask {
-    position: fixed;
-    background-color: black;
-    left: 220px;
-    width: 100%;
-    height: 100vh;
-    opacity: 0.2;
 }
 
 .banner {

@@ -1,11 +1,9 @@
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
-import Sidebar from "../../components/Sidebar/Sidebar";
 import ShortsListItem from "./components/ShortsListItem/ShortsListItem";
 import "./Shorts.css";
 
-export default function Shorts({ isSidebarVisible }) {
+export default function Shorts() {
     return (
-        <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"shorts-page"}>
+        <main id="shorts-page">
             <ul id="shorts-list">
                 <ShortsListItem />
                 <ShortsListItem />
@@ -16,6 +14,6 @@ export default function Shorts({ isSidebarVisible }) {
                 <ShortsListItem />
                 <ShortsListItem />
             </ul>
-        </DefaultPageContainer>
+        </main>
     );
 }

@@ -1,4 +1,4 @@
-#page-container {
+#default-layout {
     display: grid;
     grid-template-columns: auto 1fr;
     height: calc(100vh - 56px);
@@ -6,7 +6,7 @@
     top: 56px;
 }
 
-#page-container main {
+#default-layout main {
     height: inherit;
     overflow-x: hidden;
 }

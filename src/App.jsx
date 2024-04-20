@@ -1,6 +1,11 @@
-import { useState } from "react";
+// ROUTER
 import { Routes, Route } from "react-router-dom";
-import MainHeader from "./components/MainHeader/MainHeader";
+
+// LAYOUTS
+import DefaultLayout from "./Layout/DefaultLayout/DefaultLayout";
+import FixedLayout from "./Layout/FixedLayout/FixedLayout";
+
+// PAGES
 import Home from "./pages/Home/Home";
 import Watch from "./pages/Watch/Watch";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
@@ -9,41 +14,30 @@ import Shorts from "./pages/Shorts/Shorts";
 import Playlists from "./pages/Playlists/Playlists";
 import Playlist from "./pages/Playlist/Playlist";
 import Results from "./pages/Results/Results";
-import "./App.css";
 import * as Channel from "./pages/Channel/Channel";
-import Videos from "./pages/Channel/Pages/Videos/Videos";
+
+// CSS
+import "./App.css";
 
 function App() {
-    const [isSidebarVisible, setIsSidebarVisible] = useState(true);
-
-    function toggleSidebarVisibility() {
-        setIsSidebarVisible(!isSidebarVisible);
-    }
-
     return (
         <>
-            <MainHeader toggleSidebarVisibility={toggleSidebarVisibility} />
             <Routes>
-                <Route path="/" element={<Home isSidebarVisible={isSidebarVisible} />} />
-                <Route
-                    path="/watch"
-                    element={
-                        <Watch
-                            isSidebarVisible={isSidebarVisible}
-                            toggleSidebarVisibility={toggleSidebarVisibility}
-                            setIsSidebarVisible={setIsSidebarVisible}
-                        />
-                    }
-                />
-                <Route path="/subscriptions" element={<Subscriptions isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/channels" element={<Channels isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/shorts" element={<Shorts isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/playlists" element={<Playlists isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/playlist" element={<Playlist isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/results" element={<Results isSidebarVisible={isSidebarVisible} />} />
-                <Route path="/channel" element={<Channel.Layout isSidebarVisible={isSidebarVisible} />}>
-                    <Route index element={<Channel.Videos />} />
-                    <Route path="shorts" element={<Channel.Shorts />} />
+                <Route element={<FixedLayout />}>
+                    <Route path="/watch" element={<Watch />} />
+                </Route>
+                <Route element={<DefaultLayout />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/subscriptions" element={<Subscriptions />} />
+                    <Route path="/channels" element={<Channels />} />
+                    <Route path="/shorts" element={<Shorts />} />
+                    <Route path="/playlists" element={<Playlists />} />
+                    <Route path="/playlist" element={<Playlist />} />
+                    <Route path="/results" element={<Results />} />
+                    <Route path="/channel" element={<Channel.Layout />}>
+                        <Route index element={<Channel.Videos />} />
+                        <Route path="shorts" element={<Channel.Shorts />} />
+                    </Route>
                 </Route>
             </Routes>
         </>

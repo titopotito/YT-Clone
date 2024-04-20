@@ -1,15 +1,14 @@
 import { Outlet, useLocation } from "react-router-dom";
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
 import Videos from "./Pages/Videos/Videos";
 import Shorts from "./Pages/Shorts/Shorts";
 import "./Channel.css";
 
-function Layout({ isSidebarVisible }) {
+function Layout() {
     const location = useLocation();
 
     return (
-        <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"channel-page"}>
+        <main id="channel-page">
             <div>
                 <img src="/images/sample_banner.jpg" alt="" id="channel-banner" />
                 <div id="channel-header">
@@ -56,7 +55,7 @@ function Layout({ isSidebarVisible }) {
                 </div>
                 <Outlet />
             </div>
-        </DefaultPageContainer>
+        </main>
     );
 }
 

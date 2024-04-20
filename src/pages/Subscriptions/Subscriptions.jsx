@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import VideoGrid from "../../components/VideoGrid/VideoGrid";
 import "./Subscriptions.css";
 
-export default function Subscriptions({ isSidebarVisible }) {
+export default function Subscriptions() {
     return (
-        <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"subscriptions-page"}>
+        <main id="subscriptions-page">
             <div id="subscriptions-page-header">
                 <h3>Latest</h3>
                 <div>
@@ -22,6 +21,6 @@ export default function Subscriptions({ isSidebarVisible }) {
                 </div>
             </div>
             <VideoGrid />
-        </DefaultPageContainer>
+        </main>
     );
 }

@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
 import DetailsContainer from "../../components/DetailsContainer/DetailsContainer";
 import DropdownContainer from "../../components/DropdownContainer/DropdownContainer";
 import "./Playlist.css";
 
-export default function Playlist({ isSidebarVisible }) {
+export default function Playlist() {
     return (
-        <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"playlist-page"}>
+        <main id="playlist-page">
             <section id="playlist-header">
                 <img src="/images/dog.jpg" alt="" />
                 <div id="playlist-header-row-1">
@@ -74,7 +73,7 @@ export default function Playlist({ isSidebarVisible }) {
                     <PlaylistItem />
                 </ul>
             </section>
-        </DefaultPageContainer>
+        </main>
     );
 }
 

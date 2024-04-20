@@ -1,8 +1,7 @@
 import { useState } from "react";
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import Playlist from "./Playlist/Playlist";
-import "./Playlists.css";
 import DropdownContainer from "../../components/DropdownContainer/DropdownContainer";
+import "./Playlists.css";
 
 const OPTIONS = { RECENTLY_ADDED: "Recently added", A_Z: "A-Z" };
 
@@ -16,7 +15,7 @@ export default function Playlists({ isSidebarVisible }) {
     }
 
     return (
-        <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"playlists-page"}>
+        <main id="playlists-page">
             <h2>Playlists</h2>
             <DropdownContainer
                 btnConfig={{ className: "btn-round", text: sortOption, icon2: "fa-solid fa-chevron-down" }}
@@ -42,6 +41,6 @@ export default function Playlists({ isSidebarVisible }) {
                 <Playlist />
                 <Playlist />
             </ul>
-        </DefaultPageContainer>
+        </main>
     );
 }

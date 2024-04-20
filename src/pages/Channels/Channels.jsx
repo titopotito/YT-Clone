@@ -1,10 +1,9 @@
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import ChannelListItem from "./components/ChanelListItem/ChannelListItem";
 import "./Channels.css";
 
-export default function Channels({ isSidebarVisible }) {
+export default function Channels() {
     return (
-        <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"channels-page"}>
+        <main id="channels-page">
             <ul id="channels-list">
                 <ChannelListItem />
                 <ChannelListItem />
@@ -17,6 +16,6 @@ export default function Channels({ isSidebarVisible }) {
                 <ChannelListItem />
                 <ChannelListItem />
             </ul>
-        </DefaultPageContainer>
+        </main>
     );
 }

@@ -1,10 +1,9 @@
 import { useState } from "react";
-import DefaultPageContainer from "../../components/DefaultPageContainer/DefaultPageContainer";
 import ResultsItem from "./RestultsItem/ResultsItem";
 import ResultsPageFilterForm from "./ReultsPageFilterForm/ResultsPageFilterForm";
 import "./Results.css";
 
-export default function Results({ isSidebarVisible }) {
+export default function Results() {
     const [isFilterFormVisibile, setIsFilterFormVisibile] = useState(false);
 
     function toggleFilterFormVisiblity() {
@@ -13,7 +12,7 @@ export default function Results({ isSidebarVisible }) {
 
     return (
         <>
-            <DefaultPageContainer isSidebarVisible={isSidebarVisible} id={"results-page"}>
+            <main id="results-page">
                 <div>
                     <button className="btn-round-no-bg" onClick={toggleFilterFormVisiblity}>
                         <span>Filters</span>
@@ -32,7 +31,7 @@ export default function Results({ isSidebarVisible }) {
                     <ResultsItem />
                     <ResultsItem />
                 </ul>
-            </DefaultPageContainer>
+            </main>
             {isFilterFormVisibile ? <ResultsPageFilterForm setIsFilterFormVisibile={setIsFilterFormVisibile} /> : <></>}
         </>
     );

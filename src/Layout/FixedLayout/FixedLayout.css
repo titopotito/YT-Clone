@@ -1,0 +1,16 @@
+#fixed-layout #overlay-mask {
+    position: fixed;
+    background-color: black;
+    left: 220px;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+#fixed-layout #sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    z-index: 1;
+}
