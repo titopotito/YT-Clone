@@ -2,8 +2,8 @@
 import { Routes, Route } from "react-router-dom";
 
 // LAYOUTS
-import DefaultLayout from "./Layout/DefaultLayout/DefaultLayout";
-import FixedLayout from "./Layout/FixedLayout/FixedLayout";
+import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout";
+import FixedLayout from "./layouts/FixedLayout/FixedLayout";
 
 // PAGES
 import Home from "./pages/Home/Home";
@@ -37,6 +37,9 @@ function App() {
                     <Route path="/channel" element={<Channel.Layout />}>
                         <Route index element={<Channel.Videos />} />
                         <Route path="shorts" element={<Channel.Shorts />} />
+                        <Route path="live" element={<Channel.Live />} />
+                        <Route path="playlists" element={<Channel.Playlists />} />
+                        <Route path="community" element={<Channel.Community />} />
                     </Route>
                 </Route>
             </Routes>

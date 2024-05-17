@@ -1,0 +1,17 @@
+#channel-page-live ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+}
+
+#channel-page-live ul img {
+    max-width: 230px;
+    object-fit: cover;
+    aspect-ratio: 1.8/1;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#channel-page-live ul li {
+    max-width: 230px;
+}

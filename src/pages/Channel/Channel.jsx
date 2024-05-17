@@ -2,6 +2,9 @@ import { Outlet, useLocation } from "react-router-dom";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
 import Videos from "./Pages/Videos/Videos";
 import Shorts from "./Pages/Shorts/Shorts";
+import Live from "./Pages/Live/Live";
+import Playlists from "./Pages/Playlists/Playlists";
+import Community from "./Pages/Community/Community";
 import "./Channel.css";
 
 function Layout() {
@@ -59,4 +62,4 @@ function Layout() {
     );
 }
 
-export { Layout, Videos, Shorts };
+export { Layout, Videos, Shorts, Live, Playlists, Community };

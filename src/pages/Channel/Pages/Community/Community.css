@@ -1,0 +1,42 @@
+#channel-page-community {
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.community-post {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    max-width: 760px;
+}
+
+.community-post-details a {
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.community-post-details span {
+    color: gray;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.community-post-content > * {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+
+.community-post-img {
+    margin: 5px 0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.community-post > div > * {
+    max-width: 600px;
+}

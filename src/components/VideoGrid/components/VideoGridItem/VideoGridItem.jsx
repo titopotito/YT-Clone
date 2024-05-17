@@ -7,9 +7,7 @@ export default function VideoGridItem() {
     return (
         <li className="video-grid-item">
             <Link to={"/watch"}>
-                <figure>
-                    <img src="/images/dog.jpg" alt="" className="video-thumbnail" />
-                </figure>
+                <img src="/images/dog.jpg" alt="" className="video-thumbnail" />
             </Link>
             <div className="video-details-wrapper">
                 <Link>

@@ -5,8 +5,3 @@
     position: relative;
     top: 56px;
 }
-
-#default-layout main {
-    height: inherit;
-    overflow-x: hidden;
-}

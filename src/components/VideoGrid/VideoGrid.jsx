@@ -3,17 +3,19 @@ import "./VideoGrid.css";
 
 export default function VideoGrid() {
     return (
-        <ul id="video-grid">
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-            <VideoGridItem />
-        </ul>
+        <div id="video-grid-container">
+            <ul id="video-grid">
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+                <VideoGridItem />
+            </ul>
+        </div>
     );
 }

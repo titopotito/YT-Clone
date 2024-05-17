@@ -20,7 +20,9 @@ export default function Subscriptions() {
                     </button>
                 </div>
             </div>
-            <VideoGrid />
+            <section>
+                <VideoGrid />
+            </section>
         </main>
     );
 }
