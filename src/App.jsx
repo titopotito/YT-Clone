@@ -35,7 +35,8 @@ function App() {
                     <Route path="/playlist" element={<Playlist />} />
                     <Route path="/results" element={<Results />} />
                     <Route path="/channel" element={<Channel.Layout />}>
-                        <Route index element={<Channel.Videos />} />
+                        <Route index element={<Channel.Home />} />
+                        <Route path="videos" element={<Channel.Videos />} />
                         <Route path="shorts" element={<Channel.Shorts />} />
                         <Route path="live" element={<Channel.Live />} />
                         <Route path="playlists" element={<Channel.Playlists />} />

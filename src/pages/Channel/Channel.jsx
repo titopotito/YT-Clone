@@ -1,5 +1,6 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, Link } from "react-router-dom";
 import InfoContainer from "../../components/InfoContainer/InfoContainer";
+import Home from "./Pages/Home/Home";
 import Videos from "./Pages/Videos/Videos";
 import Shorts from "./Pages/Shorts/Shorts";
 import Live from "./Pages/Live/Live";
@@ -36,21 +37,23 @@ function Layout() {
                     </div>
                 </div>
                 <div id="channel-page-tab-container">
-                    <button className={location.pathname === "/channel/home" ? "btn-tab active" : "btn-tab"}>
-                        Home
+                    <button className={location.pathname === "/channel" ? "btn-tab active" : "btn-tab"}>
+                        <Link to={"/channel"}>Home</Link>
                     </button>
-                    <button className={location.pathname === "/channel" ? "btn-tab active" : "btn-tab"}>Videos</button>
+                    <button className={location.pathname === "/channel/videos" ? "btn-tab active" : "btn-tab"}>
+                        <Link to={"/channel/videos"}>Videos</Link>
+                    </button>
                     <button className={location.pathname === "/channel/shorts" ? "btn-tab active" : "btn-tab"}>
-                        Shorts
+                        <Link to={"/channel/shorts"}>Shorts</Link>
                     </button>
                     <button className={location.pathname === "/channel/live" ? "btn-tab active" : "btn-tab"}>
-                        Live
+                        <Link to={"/channel/live"}>Live</Link>
                     </button>
                     <button className={location.pathname === "/channel/playlists" ? "btn-tab active" : "btn-tab"}>
-                        Playlists
+                        <Link to={"/channel/playlists"}>Playlists</Link>
                     </button>
                     <button className={location.pathname === "/channel/community" ? "btn-tab active" : "btn-tab"}>
-                        Community
+                        <Link to={"/channel/community"}>Community</Link>
                     </button>
                     <button className="btn-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -62,4 +65,4 @@ function Layout() {
     );
 }
 
-export { Layout, Videos, Shorts, Live, Playlists, Community };
+export { Layout, Home, Videos, Shorts, Live, Playlists, Community };

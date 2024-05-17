@@ -252,6 +252,10 @@ ul {
     border: none;
 }
 
+.btn-tab > * {
+    color: #606060;
+}
+
 .btn-tab:hover {
     border-bottom: 2px solid #606060;
     cursor: pointer;
@@ -260,4 +264,8 @@ ul {
 .btn-tab.active {
     color: black;
     border-bottom: 2px solid black;
+}
+
+.btn-tab.active > * {
+    color: black;
 }
