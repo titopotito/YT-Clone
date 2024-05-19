@@ -14,6 +14,7 @@ import Shorts from "./pages/Shorts/Shorts";
 import Playlists from "./pages/Playlists/Playlists";
 import Playlist from "./pages/Playlist/Playlist";
 import Results from "./pages/Results/Results";
+import History from "./pages/History/History";
 import * as Channel from "./pages/Channel/Channel";
 
 // CSS
@@ -28,12 +29,9 @@ function App() {
                 </Route>
                 <Route element={<DefaultLayout />}>
                     <Route path="/" element={<Home />} />
+                    <Route path="/shorts" element={<Shorts />} />
                     <Route path="/subscriptions" element={<Subscriptions />} />
                     <Route path="/channels" element={<Channels />} />
-                    <Route path="/shorts" element={<Shorts />} />
-                    <Route path="/playlists" element={<Playlists />} />
-                    <Route path="/playlist" element={<Playlist />} />
-                    <Route path="/results" element={<Results />} />
                     <Route path="/channel" element={<Channel.Layout />}>
                         <Route index element={<Channel.Home />} />
                         <Route path="videos" element={<Channel.Videos />} />
@@ -42,6 +40,10 @@ function App() {
                         <Route path="playlists" element={<Channel.Playlists />} />
                         <Route path="community" element={<Channel.Community />} />
                     </Route>
+                    <Route path="/history" element={<History />} />
+                    <Route path="/playlists" element={<Playlists />} />
+                    <Route path="/playlist" element={<Playlist />} />
+                    <Route path="/results" element={<Results />} />
                 </Route>
             </Routes>
         </>

@@ -1,0 +1,44 @@
+#history-page {
+    padding-left: 90px;
+    overflow-y: scroll;
+}
+
+#history-page > div {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#history-list {
+    max-width: 550px;
+}
+
+.history-video-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.history-video-item img {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#history-page-action-items form {
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+    max-width: 220px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#history-page-action-items input {
+    border: none;
+    padding-left: 10px;
+    outline: none;
+}
+
+#history-page-action-items > button {
+    margin-bottom: 10px;
+}
