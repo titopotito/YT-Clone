@@ -28,10 +28,10 @@ export default function Sidebar({ isSidebarVisible }) {
                         <i className="fa-regular fa-circle-user"></i>
                         <span>Your channel</span>
                     </a>
-                    <a href="" className="nav-link">
+                    <Link to={"/history"} className="nav-link">
                         <i className="fa-solid fa-clock-rotate-left"></i>
                         <span>History</span>
-                    </a>
+                    </Link>
                     <Link to={"/playlists"} className="nav-link">
                         <i className="fa-solid fa-list"></i>
                         <span>Playlists</span>
@@ -40,29 +40,29 @@ export default function Sidebar({ isSidebarVisible }) {
                         <i className="fa-regular fa-circle-play"></i>
                         <span>Your Videos</span>
                     </a>
-                    <a href="" className="nav-link">
+                    <Link to={"/playlist"} className="nav-link">
                         <i className="fa-regular fa-clock"></i>
                         <span>Watch Later</span>
-                    </a>
-                    <a href="" className="nav-link">
+                    </Link>
+                    <Link to={"/playlist"} className="nav-link">
                         <i className="fa-regular fa-thumbs-up"></i>
                         <span>Liked Videos</span>
-                    </a>
+                    </Link>
                 </div>
                 <div>
                     <h2 className="nav-header">Subscriptions</h2>
                     <ul>
                         <li>
-                            <a href="" className="nav-link">
+                            <Link to={"/channel"} className="nav-link">
                                 <img src="/images/default_user_image.jpg" alt="" className="profile-img" />
                                 <span>Jeikage</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="" className="nav-link">
+                            <Link to={"/channel"} className="nav-link">
                                 <img src="/images/default_user_image.jpg" alt="" className="profile-img" />
                                 <span>IWinToLoseGaming</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

@@ -15,6 +15,7 @@ import Playlists from "./pages/Playlists/Playlists";
 import Playlist from "./pages/Playlist/Playlist";
 import Results from "./pages/Results/Results";
 import History from "./pages/History/History";
+import Studio from "./pages/Studio/Studio";
 import * as Channel from "./pages/Channel/Channel";
 
 // CSS
@@ -44,6 +45,9 @@ function App() {
                     <Route path="/playlists" element={<Playlists />} />
                     <Route path="/playlist" element={<Playlist />} />
                     <Route path="/results" element={<Results />} />
+                </Route>
+                <Route>
+                    <Route path="/studio" element={<Studio />} />
                 </Route>
             </Routes>
         </>

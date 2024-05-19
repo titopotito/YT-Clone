@@ -50,6 +50,13 @@ ul {
     border-radius: 50%;
 }
 
+.profile-pic.big {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
 .flex-container {
     display: grid;
     grid-template-columns: auto 1fr;

@@ -1,0 +1,46 @@
+#studio-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    border-right: 1px solid lightgray;
+}
+
+#studio-sidebar > div:first-child {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#studio-sidebar > div:first-child div {
+    margin: 20px 0;
+}
+
+#studio-sidebar > div:first-child b {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+#studio-sidebar > div:first-child span {
+    color: #606060;
+    font-size: 0.7rem;
+}
+
+#studio-sidebar > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#studio-sidebar-nav-items > a {
+    padding: 12px;
+    padding-left: 25px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #606060;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#studio-sidebar-nav-items > a > i {
+    font-size: 1.1rem;
+}
