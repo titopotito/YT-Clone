@@ -36,7 +36,7 @@ function Layout() {
                         </div>
                     </div>
                 </div>
-                <div id="channel-page-tab-container">
+                <div className="tab-container">
                     <button className={location.pathname === "/channel" ? "btn-tab active" : "btn-tab"}>
                         <Link to={"/channel"}>Home</Link>
                     </button>

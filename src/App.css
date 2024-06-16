@@ -62,6 +62,14 @@ ul {
     grid-template-columns: auto 1fr;
 }
 
+.tab-container {
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+    height: 38.5px;
+}
+
 .dislike {
     transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -231,6 +239,23 @@ ul {
     color: blue;
     font-weight: 600;
     font-size: 0.82rem;
+}
+
+.btn-blue-bg {
+    color: white;
+    background-color: #065fd4;
+    border: none;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.btn-blue-bg:hover {
+    cursor: pointer;
+}
+
+.btn-blue-bg:active {
+    opacity: 0.8;
 }
 
 .btn-sort {

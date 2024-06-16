@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // LAYOUTS
 import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout";
 import FixedLayout from "./layouts/FixedLayout/FixedLayout";
+import StudioLayout from "./layouts/StudioLayout/StudioLayout";
 
 // PAGES
 import Home from "./pages/Home/Home";
@@ -15,7 +16,7 @@ import Playlists from "./pages/Playlists/Playlists";
 import Playlist from "./pages/Playlist/Playlist";
 import Results from "./pages/Results/Results";
 import History from "./pages/History/History";
-import Studio from "./pages/Studio/Studio";
+import * as Studio from "./pages/Studio/Studio";
 import * as Channel from "./pages/Channel/Channel";
 
 // CSS
@@ -46,8 +47,8 @@ function App() {
                     <Route path="/playlist" element={<Playlist />} />
                     <Route path="/results" element={<Results />} />
                 </Route>
-                <Route>
-                    <Route path="/studio" element={<Studio />} />
+                <Route element={<StudioLayout />}>
+                    <Route path="/studio" element={<Studio.Content />} />
                 </Route>
             </Routes>
         </>
