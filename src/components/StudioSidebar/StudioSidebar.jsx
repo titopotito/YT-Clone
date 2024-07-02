@@ -11,43 +11,43 @@ export default function StudioSidebar() {
             </div>
             <div id="studio-sidebar-nav-items">
                 <Link>
-                    <i class="fa-solid fa-table-columns"></i>
+                    <i className="fa-solid fa-table-columns"></i>
                     <span>Dashboard</span>
                 </Link>
                 <Link>
-                    <i class="fa-brands fa-youtube"></i>
+                    <i className="fa-brands fa-youtube"></i>
                     <span>Content</span>
                 </Link>
                 <Link>
-                    <i class="fa-solid fa-chart-bar"></i>
+                    <i className="fa-solid fa-chart-bar"></i>
                     <span>Analytics</span>
                 </Link>
                 <Link>
-                    <i class="fa-regular fa-comment-dots"></i>
+                    <i className="fa-regular fa-comment-dots"></i>
                     <span>Comments</span>
                 </Link>
                 <Link>
-                    <i class="fa-regular fa-closed-captioning"></i>
+                    <i className="fa-regular fa-closed-captioning"></i>
                     <span>Subtitles</span>
                 </Link>
                 <Link>
-                    <i class="fa-regular fa-copyright"></i>
+                    <i className="fa-regular fa-copyright"></i>
                     <span>Copyright</span>
                 </Link>
                 <Link>
-                    <i class="fa-solid fa-dollar-sign"></i>
+                    <i className="fa-solid fa-dollar-sign"></i>
                     <span>Earn</span>
                 </Link>
                 <Link>
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <i className="fa-solid fa-wand-magic-sparkles"></i>
                     <span>Customization</span>
                 </Link>
                 <Link>
-                    <i class="fa-solid fa-gear"></i>
+                    <i className="fa-solid fa-gear"></i>
                     <span>Settings</span>
                 </Link>
                 <Link>
-                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i className="fa-solid fa-circle-exclamation"></i>
                     <span>Send Feedback</span>
                 </Link>
             </div>

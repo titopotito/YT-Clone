@@ -1,0 +1,49 @@
+#upload-video-form {
+    position: absolute;
+    top: -56px;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#upload-video-form > form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 850px;
+    border-radius: 10px;
+    height: 500px;
+    padding-bottom: 30px;
+}
+
+#upload-video-form-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+#upload-video-form-header > h2 {
+    flex: 1 1 auto;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+#upload-video-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#upload-video-form > form > p {
+    color: gray;
+    font-size: 0.7rem;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2rem;
+}

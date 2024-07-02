@@ -55,9 +55,34 @@
     margin: 0;
 }
 
-.video-content-list {
+.empty-video-content-list {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1 1 auto;
+}
+
+.video-content-list-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 5px 0;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.video-content-list-item p,
+.video-content-list-item h4 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.video-content-list-item input[type="checkbox"] {
+    margin: 0;
+}
+
+.video-content {
+    display: flex;
+    align-items: start;
+    gap: 10px;
 }

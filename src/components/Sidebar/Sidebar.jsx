@@ -36,10 +36,10 @@ export default function Sidebar({ isSidebarVisible }) {
                         <i className="fa-solid fa-list"></i>
                         <span>Playlists</span>
                     </Link>
-                    <a href="" className="nav-link">
+                    <Link to={"/studio"} className="nav-link">
                         <i className="fa-regular fa-circle-play"></i>
                         <span>Your Videos</span>
-                    </a>
+                    </Link>
                     <Link to={"/playlist"} className="nav-link">
                         <i className="fa-regular fa-clock"></i>
                         <span>Watch Later</span>
