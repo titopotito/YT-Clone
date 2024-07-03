@@ -19,6 +19,10 @@ ul {
     margin: 0;
 }
 
+input[type="file"] {
+    display: none;
+}
+
 .small-thumbnail {
     width: 120px;
     border-radius: 10px;
@@ -306,5 +310,27 @@ ul {
 }
 
 .btn-tab.active > * {
+    color: black;
+}
+
+.btn-thumbnail-upload {
+    border: 1px dashed gray;
+    color: gray;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.btn-thumbnail-upload:hover {
+    cursor: pointer;
+    border: 1px dashed black;
+}
+
+.btn-thumbnail-upload:hover i,
+.btn-thumbnail-upload:hover span {
     color: black;
 }

@@ -4,7 +4,8 @@ import "./DropdownContainer.css";
 export default function DropdownContainer({ children, btnConfig, hideOnClick = true }) {
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
-    function toggleDropdown() {
+    function toggleDropdown(e) {
+        e.preventDefault();
         setIsDropdownVisible(!isDropdownVisible);
     }
     return (
