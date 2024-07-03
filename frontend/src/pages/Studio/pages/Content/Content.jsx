@@ -105,7 +105,18 @@ export default function Content() {
                                             <img src="/images/dog.jpg" alt="" className="small-thumbnail" />
                                             <div>
                                                 <h4>{testVideo.title}</h4>
-                                                <p>{testVideo.description}</p>
+                                                <p className="video-item-description">{testVideo.description}</p>
+                                                <div className="video-item-hover-items">
+                                                    <button className="btn-icon">
+                                                        <i class="fa-solid fa-pen"></i>
+                                                    </button>
+                                                    <button className="btn-icon">
+                                                        <i class="fa-brands fa-square-youtube"></i>
+                                                    </button>
+                                                    <button className="btn-icon">
+                                                        <i class="fa-solid fa-trash-can"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div>
