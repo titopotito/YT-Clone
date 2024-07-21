@@ -20,10 +20,14 @@ class UploadedVideoDetailView(generics.RetrieveAPIView):
 class UploadedVideoUpdateView(generics.UpdateAPIView):
     queryset = UploadedVideo.objects.all()
     serializer_class = UploadedVideoSerializer
+    authentication_classes = [
+        authentication.SessionAuthentication, authentication.TokenAuthentication]
     lookup_field = 'pk'
 
 
 class UploadedVideoDeleteView(generics.DestroyAPIView):
     queryset = UploadedVideo.objects.all()
     serializer_class = UploadedVideoSerializer
+    authentication_classes = [
+        authentication.SessionAuthentication, authentication.TokenAuthentication]
     lookup_field = 'pk'

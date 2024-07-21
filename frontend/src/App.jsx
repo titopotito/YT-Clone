@@ -8,6 +8,7 @@ import StudioLayout from "./layouts/StudioLayout/StudioLayout";
 
 // PAGES
 import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
 import Watch from "./pages/Watch/Watch";
 import Subscriptions from "./pages/Subscriptions/Subscriptions";
 import Channels from "./pages/Channels/Channels";
@@ -50,6 +51,7 @@ function App() {
                 <Route element={<StudioLayout />}>
                     <Route path="/studio" element={<Studio.Content />} />
                 </Route>
+                <Route path="/login" element={<Login />} />
             </Routes>
         </>
     );
