@@ -1,18 +1,29 @@
-from django.http import HttpResponse, JsonResponse
-from rest_framework import generics
+from rest_framework import generics, authentication, permissions
 from .models import UploadedVideo
-from .serializers import UploadedVideoListCreateSerializer, UploadedVideoDetailSerializer
-
-
-def videos(request):
-    return JsonResponse({"hello": "Hello"})
+from .serializers import UploadedVideoSerializer
 
 
 class UploadedVideoListCreateView(generics.ListCreateAPIView):
     queryset = UploadedVideo.objects.all()
-    serializer_class = UploadedVideoListCreateSerializer
+    serializer_class = UploadedVideoSerializer
+    authentication_classes = [
+        authentication.SessionAuthentication, authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class UploadedVideoDetailView(generics.RetrieveAPIView):
     queryset = UploadedVideo.objects.all()
-    serializer_class = UploadedVideoDetailSerializer
+    serializer_class = UploadedVideoSerializer
+    lookup_field = 'pk'
+
+
+class UploadedVideoUpdateView(generics.UpdateAPIView):
+    queryset = UploadedVideo.objects.all()
+    serializer_class = UploadedVideoSerializer
+    lookup_field = 'pk'
+
+
+class UploadedVideoDeleteView(generics.DestroyAPIView):
+    queryset = UploadedVideo.objects.all()
+    serializer_class = UploadedVideoSerializer
+    lookup_field = 'pk'
