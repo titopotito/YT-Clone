@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:8000/api/";
-
-const LOGIN_URL = "http://localhost:8000/user/login";
-const REGISTER_URL = "http://localhost:8000/user/register";
+const LOCALHOST_URL = "http://localhost:800/";
+const API_URL = LOCALHOST_URL + "api/";
+const LOGIN_URL = LOCALHOST_URL + "user/login";
+const REGISTER_URL = LOCALHOST_URL + "user/register";
 
 async function get(endpoint) {
     return await fetch(API_URL + endpoint, {
