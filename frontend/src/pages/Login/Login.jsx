@@ -9,7 +9,6 @@ export default function Login() {
         e.preventDefault();
         APIHandler.login(new FormData(e.target))
             .then((token) => {
-                console.log(token);
                 if (token !== null) {
                     CookieHandler.set("token", token);
                     navigate("/");

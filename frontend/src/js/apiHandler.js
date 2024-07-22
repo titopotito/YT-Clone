@@ -8,27 +8,46 @@ async function get(endpoint) {
         method: "GET",
     })
         .then((response) => {
-            if (response.ok) return response.json();
-            else {
-                console.log(response);
+            if (!response.ok) {
+                console.log("Error " + response.status);
                 return null;
             }
+            return response.json();
         })
-        .catch((error) => console.log("ERROR REQUEST: " + error));
+        .catch((error) => console.log("Caught Error: " + error));
 }
 
 async function login(body) {
     return await fetch(LOGIN_URL, {
         method: "POST",
         body: body,
-    }).then((response) => {
-        if (!response.ok) {
-            if (response.status === 401) console.log("User does not exist.");
-            return null;
-        } else {
+    })
+        .then((response) => {
+            if (!response.ok) {
+                console.log("Error " + response.status);
+                return null;
+            }
             return response.json();
-        }
-    });
+        })
+        .catch((error) => console.log("Caught Error: " + error));
 }
 
-export { get, login };
+async function register(body) {
+    return await fetch(REGISTER_URL, {
+        method: "POST",
+        body: body,
+        redirect: "follow",
+    })
+        .then((response) => {
+            if (!response.ok) {
+                console.log(response);
+
+                console.log("Error " + response.status);
+                return null;
+            }
+            return response.json();
+        })
+        .catch((error) => console.log("Caught Error: " + error));
+}
+
+export { get, login, register };
