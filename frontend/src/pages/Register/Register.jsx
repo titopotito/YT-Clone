@@ -4,13 +4,14 @@ import * as APIHandler from "../../js/apiHandler.js";
 export default function Login() {
     const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        APIHandler.register(new FormData(e.target))
-            .then((data) => {
-                if (data !== null) navigate("/login");
-            })
-            .catch((error) => console.log(error));
+        try {
+            const response = await APIHandler.register(new FormData(e.target));
+            response.isSuccess ? navigate("/login") : console.log(response.errors);
+        } catch {
+            console.log("Encountered an error.");
+        }
     }
 
     return (

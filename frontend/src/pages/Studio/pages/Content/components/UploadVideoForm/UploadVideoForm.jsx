@@ -1,30 +1,53 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DropdownContainer from "../../../../../../components/DropdownContainer/DropdownContainer";
+import * as APIHandler from "../../../../../../js/apiHandler.js";
 import "./UploadVideoForm.css";
 
 export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
     const [isForm2Visible, setIsForm2Visible] = useState(false);
+    const [thumbnail, setThumbnail] = useState("");
+    const [thumbnailURL, setThumbnailURL] = useState(null);
     const [videoFile, setVideoFile] = useState(null);
     const [videoFileURL, setVideoFileURL] = useState(null);
 
     function closeForm(e) {
+        e.preventDefault();
         setIsUploadVideoFormVisible(false);
     }
+
     function handeClick(e) {
         e.stopPropagation();
     }
+
     function uploadVideo(e) {
         setVideoFile(e.target.files[0]);
         setVideoFileURL(URL.createObjectURL(e.target.files[0]));
-
         setIsForm2Visible(true);
+    }
+
+    function uploadThumbnail(e) {
+        setThumbnailURL(URL.createObjectURL(e.target.files[0]));
+        setThumbnail(e.target.files[0]);
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        data.append("owner", "awaw");
+        data.append("video", videoFile);
+        try {
+            const response = await APIHandler.post("videos", data);
+            response.isSuccess ? setIsUploadVideoFormVisible(false) : console.log(response.errors);
+        } catch {
+            console.log("Encountered an error.");
+        }
     }
 
     return (
         <>
             <div id="upload-video-form" onClick={closeForm}>
                 {!isForm2Visible ? (
-                    <form onClick={(e) => handeClick(e)} method="post" encType="multipart/form-data" className="form1">
+                    <form onClick={handeClick} method="post" encType="multipart/form-data" className="form1">
                         <div id="upload-video-form1-header">
                             <h2>Upload videos</h2>
                             <button className="btn-icon">
@@ -57,7 +80,7 @@ export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
                         <p>Please be sure not to violate others' copyright or privacy rights. Learn more</p>
                     </form>
                 ) : (
-                    <form onClick={(e) => handeClick(e)} action="" className="form2">
+                    <form onClick={handeClick} className="form2" onSubmit={handleSubmit}>
                         <div id="upload-video-form2-header">
                             <h2>{videoFile.name}</h2>
                             <button className="btn-icon" onClick={closeForm}>
@@ -70,21 +93,24 @@ export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
                             <div>
                                 <div>
                                     <h3>Details</h3>
-                                    <input type="text" placeholder="title" />
-                                    <textarea name="" id="" placeholder="description"></textarea>
+                                    <input type="text" placeholder="title" name="title" />
+                                    <textarea name="description" placeholder="description"></textarea>
                                 </div>
                                 <div>
                                     <h3>Thumbnail</h3>
                                     <p>Set a thumbnail that stands out and draws viewers' attention.</p>
-                                    <label htmlFor="thumbnail-upload-btn" className="btn-thumbnail-upload">
-                                        <i class="fa-solid fa-file-arrow-up"></i>
+                                    <img src={thumbnailURL} alt="" className="sample-thumbnail-display" />
+
+                                    <label htmlFor="thumbnail" className="btn-thumbnail-upload">
+                                        <i className="fa-solid fa-file-arrow-up"></i>
                                         <span>Upload File</span>
                                     </label>
                                     <input
                                         type="file"
-                                        id="btn-thumbnail-upload"
-                                        name="btn-thumbnail-upload"
+                                        id="thumbnail"
+                                        name="thumbnail"
                                         accept="image/png, image/jpeg"
+                                        onChange={uploadThumbnail}
                                     />
                                 </div>
                                 <div>
@@ -125,11 +151,11 @@ export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
                                     <h3>Visibility</h3>
                                     <p>Choose who can see your video</p>
                                     <div>
-                                        <input type="radio" id="radio-btn-private" name="radio-btn-visibility" />
+                                        <input type="radio" id="radio-btn-private" name="visibility" />
                                         <label htmlFor="radio-btn-private">Private</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="radio-btn-public" name="radio-btn-visibility" />
+                                        <input type="radio" id="radio-btn-public" name="visibility" />
                                         <label htmlFor="radio-btn-public">Public</label>
                                     </div>
                                 </div>

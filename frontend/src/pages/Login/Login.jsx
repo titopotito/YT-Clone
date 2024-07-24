@@ -1,20 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import * as APIHandler from "../../js/apiHandler.js";
-import CookieHandler from "../../js/cookieHandler.js";
 
 export default function Login() {
     const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        APIHandler.login(new FormData(e.target))
-            .then((token) => {
-                if (token !== null) {
-                    CookieHandler.set("token", token);
-                    navigate("/");
-                }
-            })
-            .catch((error) => console.log(error));
+        try {
+            const response = await APIHandler.login(new FormData(e.target));
+            response.isSuccess ? navigate("/") : console.log(response.message);
+        } catch {
+            console.log("Encountered an error.");
+        }
     }
 
     return (

@@ -6,6 +6,7 @@ class UploadedVideoSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadedVideo
         fields = [
+            'pk',
             'title',
             'owner',
             'video',

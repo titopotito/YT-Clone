@@ -1,41 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UploadVideoForm from "./components/UploadVideoForm/UploadVideoForm";
+import * as APIHandler from "../../../../js/apiHandler.js";
 import "./Content.css";
 
 export default function Content() {
+    const [videoList, setVideoList] = useState(null);
     const [isUploadVideoFormVisible, setIsUploadVideoFormVisible] = useState(false);
 
-    const [testVideos, setTestVideos] = useState([{ id: 0, title: "sample title" }]);
-
     useEffect(() => {
-        // setTestVideos(null);
-        setTestVideos([
-            {
-                id: 1,
-                thumbnail: "thumbnail",
-                title: "this is the title",
-                description: "sample description here",
-                visibility: "public",
-                restrictions: "None",
-                date: "Jun 16, 2024",
-                views: 100,
-                comments: 200,
-                likesAndDislikes: 0.9,
-            },
-            {
-                id: 2,
-                thumbnail: "thumbnail 2",
-                title: "this is the title number 2",
-                description: null,
-                visibility: "draft",
-                restrictions: "None",
-                date: "Jun 17, 2024",
-                views: null,
-                comments: null,
-                likesAndDislikes: null,
-            },
-        ]);
+        async function fetchVideos() {
+            const response = await APIHandler.get("videos");
+            setVideoList(response);
+        }
+        fetchVideos();
     }, []);
 
     function toggleUploadVideoFormVisibility() {
@@ -94,51 +72,49 @@ export default function Content() {
                         <span>Likes &#40;vs. dislikes&#41;</span>
                     </div>
                 </div>
-                {testVideos ? (
-                    <ul>
-                        {testVideos.map((testVideo) => {
+                {videoList ? (
+                    <ul id="uploaded-video-list">
+                        {videoList.map((uploadedVideo) => {
                             return (
-                                <>
-                                    <li className="video-content-list-item" key={testVideo.id}>
-                                        <div className="video-content">
-                                            <input type="checkbox" />
-                                            <img src="/images/dog.jpg" alt="" className="small-thumbnail" />
-                                            <div>
-                                                <h4>{testVideo.title}</h4>
-                                                <p className="video-item-description">{testVideo.description}</p>
-                                                <div className="video-item-hover-items">
-                                                    <button className="btn-icon">
-                                                        <i class="fa-solid fa-pen"></i>
-                                                    </button>
-                                                    <button className="btn-icon">
-                                                        <i class="fa-brands fa-square-youtube"></i>
-                                                    </button>
-                                                    <button className="btn-icon">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </div>
+                                <li className="video-content-list-item" key={uploadedVideo.pk}>
+                                    <div className="video-content">
+                                        <input type="checkbox" />
+                                        <img src={uploadedVideo.thumbnail} alt="" className="small-thumbnail" />
+                                        <div>
+                                            <h4>{uploadedVideo.title}</h4>
+                                            <p className="video-item-description">{uploadedVideo.description}</p>
+                                            <div className="video-item-hover-items">
+                                                <button className="btn-icon">
+                                                    <i className="fa-solid fa-pen"></i>
+                                                </button>
+                                                <button className="btn-icon">
+                                                    <i className="fa-brands fa-square-youtube"></i>
+                                                </button>
+                                                <button className="btn-icon">
+                                                    <i className="fa-solid fa-trash-can"></i>
+                                                </button>
                                             </div>
                                         </div>
-                                        <div>
-                                            <p>{testVideo.visibility}</p>
-                                        </div>
-                                        <div>
-                                            <p>{testVideo.restrictions}</p>
-                                        </div>
-                                        <div>
-                                            <p>{testVideo.date}</p>
-                                        </div>
-                                        <div>
-                                            <p>{testVideo.views}</p>
-                                        </div>
-                                        <div>
-                                            <p>{testVideo.comments}</p>
-                                        </div>
-                                        <div>
-                                            <p>{testVideo.likesAndDislikes}</p>
-                                        </div>
-                                    </li>
-                                </>
+                                    </div>
+                                    <div>
+                                        <p>{uploadedVideo.visibility}</p>
+                                    </div>
+                                    <div>
+                                        <p>{uploadedVideo.restrictions}</p>
+                                    </div>
+                                    <div>
+                                        <p>{uploadedVideo.date}</p>
+                                    </div>
+                                    <div>
+                                        <p>{uploadedVideo.views}</p>
+                                    </div>
+                                    <div>
+                                        <p>{uploadedVideo.comments}</p>
+                                    </div>
+                                    <div>
+                                        <p>{String(uploadedVideo.likes / uploadedVideo.dislikes)}</p>
+                                    </div>
+                                </li>
                             );
                         })}
                     </ul>

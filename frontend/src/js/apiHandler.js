@@ -1,53 +1,49 @@
-const LOCALHOST_URL = "http://localhost:800/";
+import CookieHandler from "./cookieHandler";
+
+const LOCALHOST_URL = "http://localhost:8000/";
 const API_URL = LOCALHOST_URL + "api/";
 const LOGIN_URL = LOCALHOST_URL + "user/login";
 const REGISTER_URL = LOCALHOST_URL + "user/register";
 
 async function get(endpoint) {
-    return await fetch(API_URL + endpoint, {
-        method: "GET",
-    })
-        .then((response) => {
-            if (!response.ok) {
-                console.log("Error " + response.status);
-                return null;
-            }
-            return response.json();
-        })
-        .catch((error) => console.log("Caught Error: " + error));
+    const response = await fetch(API_URL + endpoint, { method: "GET" });
+    const data = await response.json();
+    return data;
+}
+
+async function post(endpoint, body) {
+    const response = await fetch(API_URL + endpoint, {
+        method: "POST",
+        headers: { Authorization: "Token " + CookieHandler.get("token") },
+        body: body,
+    });
+    const data = await response.json();
+    if (response.ok) return { isSuccess: response.ok };
+    return { isSuccess: response.ok, errors: response.errors };
 }
 
 async function login(body) {
-    return await fetch(LOGIN_URL, {
+    const response = await fetch(LOGIN_URL, {
         method: "POST",
         body: body,
-    })
-        .then((response) => {
-            if (!response.ok) {
-                console.log("Error " + response.status);
-                return null;
-            }
-            return response.json();
-        })
-        .catch((error) => console.log("Caught Error: " + error));
+    });
+    const data = await response.json();
+    if (response.ok) {
+        CookieHandler.set("token", data.token);
+        return { isSuccess: response.ok, message: "Login success!" };
+    }
+    return { isSuccess: response.ok, message: "Invalid credentials." };
 }
 
 async function register(body) {
-    return await fetch(REGISTER_URL, {
+    const response = await fetch(REGISTER_URL, {
         method: "POST",
         body: body,
         redirect: "follow",
-    })
-        .then((response) => {
-            if (!response.ok) {
-                console.log(response);
-
-                console.log("Error " + response.status);
-                return null;
-            }
-            return response.json();
-        })
-        .catch((error) => console.log("Caught Error: " + error));
+    });
+    if (response.ok) return { isSuccess: response.ok, message: "Registration complete!" };
+    const errors = await response.json();
+    return { isSuccess: response.ok, errors: errors };
 }
 
-export { get, login, register };
+export { get, post, login, register };
