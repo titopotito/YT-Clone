@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import UploadVideoForm from "./components/UploadVideoForm/UploadVideoForm";
 import * as APIHandler from "../../../../js/apiHandler.js";
+import UploadVideoForm from "./components/UploadVideoForm/UploadVideoForm";
+import DeleteVideoForm from "./components/DeleteVideoForm/DeleteVideoForm.jsx";
 import "./Content.css";
 
 export default function Content() {
-    const [videoList, setVideoList] = useState(null);
+    const [videoList, setVideoList] = useState([]);
     const [isUploadVideoFormVisible, setIsUploadVideoFormVisible] = useState(false);
+    const [isDeleteVideoFormVisible, setIsDeleteVideoFormVisible] = useState(false);
+    const [videoToBeDeleted, setVideoToBeDeleted] = useState(null);
 
     useEffect(() => {
         async function fetchVideos() {
@@ -18,6 +21,23 @@ export default function Content() {
 
     function toggleUploadVideoFormVisibility() {
         setIsUploadVideoFormVisible(!isUploadVideoFormVisible);
+    }
+
+    function openDeleteForm(video) {
+        setVideoToBeDeleted(video);
+        setIsDeleteVideoFormVisible(true);
+    }
+
+    function addVideoFromList(video) {
+        videoList.push(video);
+    }
+
+    function removeVideoFromList(video) {
+        setVideoList(
+            videoList.filter((videoEntry) => {
+                return video.pk !== videoEntry.pk;
+            })
+        );
     }
 
     return (
@@ -72,7 +92,7 @@ export default function Content() {
                         <span>Likes &#40;vs. dislikes&#41;</span>
                     </div>
                 </div>
-                {videoList ? (
+                {videoList.length !== 0 ? (
                     <ul id="uploaded-video-list">
                         {videoList.map((uploadedVideo) => {
                             return (
@@ -90,7 +110,10 @@ export default function Content() {
                                                 <button className="btn-icon">
                                                     <i className="fa-brands fa-square-youtube"></i>
                                                 </button>
-                                                <button className="btn-icon">
+                                                <button
+                                                    className="btn-icon"
+                                                    onClick={() => openDeleteForm(uploadedVideo)}
+                                                >
                                                     <i className="fa-solid fa-trash-can"></i>
                                                 </button>
                                             </div>
@@ -128,7 +151,20 @@ export default function Content() {
                 <div></div>
             </main>
             {isUploadVideoFormVisible ? (
-                <UploadVideoForm setIsUploadVideoFormVisible={setIsUploadVideoFormVisible} />
+                <UploadVideoForm
+                    setIsUploadVideoFormVisible={setIsUploadVideoFormVisible}
+                    addVideoFromList={addVideoFromList}
+                />
+            ) : (
+                <></>
+            )}
+            {isDeleteVideoFormVisible ? (
+                <DeleteVideoForm
+                    setIsDeleteVideoFormVisible={setIsDeleteVideoFormVisible}
+                    setVideoToBeDeleted={setVideoToBeDeleted}
+                    videoToBeDeleted={videoToBeDeleted}
+                    removeVideoFromList={removeVideoFromList}
+                />
             ) : (
                 <></>
             )}

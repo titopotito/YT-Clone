@@ -78,7 +78,7 @@
 .video-content-list-item p,
 .video-content-list-item h4 {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .video-content-list-item input[type="checkbox"] {
@@ -89,10 +89,24 @@
     display: flex;
     align-items: start;
     gap: 10px;
+    overflow-x: hidden;
+    padding-right: 20px;
 }
 
 .video-item-hover-items {
     display: none;
+}
+
+.video-item-description {
+    font-size: 0.4rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
 }
 
 .video-content-list-item:hover .video-item-hover-items {

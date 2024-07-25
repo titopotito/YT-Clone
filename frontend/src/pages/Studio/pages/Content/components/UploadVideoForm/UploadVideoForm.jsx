@@ -3,12 +3,17 @@ import DropdownContainer from "../../../../../../components/DropdownContainer/Dr
 import * as APIHandler from "../../../../../../js/apiHandler.js";
 import "./UploadVideoForm.css";
 
-export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
+export default function UploadVideoForm({ setIsUploadVideoFormVisible, addVideoFromList }) {
     const [isForm2Visible, setIsForm2Visible] = useState(false);
     const [thumbnail, setThumbnail] = useState("");
     const [thumbnailURL, setThumbnailURL] = useState(null);
     const [videoFile, setVideoFile] = useState(null);
     const [videoFileURL, setVideoFileURL] = useState(null);
+
+    const VISIBILITY = {
+        PUBLIC: "Public",
+        PRIVATE: "Private",
+    };
 
     function closeForm(e) {
         e.preventDefault();
@@ -30,14 +35,16 @@ export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
         setThumbnail(e.target.files[0]);
     }
 
-    async function handleSubmit(e) {
+    async function fetchPost(e) {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append("owner", "awaw");
         data.append("video", videoFile);
         try {
             const response = await APIHandler.post("videos", data);
-            response.isSuccess ? setIsUploadVideoFormVisible(false) : console.log(response.errors);
+            if (!response.isSuccess) return console.log(response.errors);
+            addVideoFromList(response.data);
+            setIsUploadVideoFormVisible(false);
         } catch {
             console.log("Encountered an error.");
         }
@@ -80,7 +87,7 @@ export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
                         <p>Please be sure not to violate others' copyright or privacy rights. Learn more</p>
                     </form>
                 ) : (
-                    <form onClick={handeClick} className="form2" onSubmit={handleSubmit}>
+                    <form onClick={handeClick} className="form2" onSubmit={fetchPost}>
                         <div id="upload-video-form2-header">
                             <h2>{videoFile.name}</h2>
                             <button className="btn-icon" onClick={closeForm}>
@@ -151,11 +158,22 @@ export default function UploadVideoForm({ setIsUploadVideoFormVisible }) {
                                     <h3>Visibility</h3>
                                     <p>Choose who can see your video</p>
                                     <div>
-                                        <input type="radio" id="radio-btn-private" name="visibility" />
+                                        <input
+                                            type="radio"
+                                            id="radio-btn-private"
+                                            name="visibility"
+                                            value={VISIBILITY.PRIVATE}
+                                        />
                                         <label htmlFor="radio-btn-private">Private</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="radio-btn-public" name="visibility" />
+                                        <input
+                                            type="radio"
+                                            id="radio-btn-public"
+                                            name="visibility"
+                                            value={VISIBILITY.PUBLIC}
+                                            defaultChecked
+                                        />
                                         <label htmlFor="radio-btn-public">Public</label>
                                     </div>
                                 </div>

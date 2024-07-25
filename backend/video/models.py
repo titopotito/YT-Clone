@@ -13,8 +13,8 @@ VALID_EXTENSIONS = {
 
 
 class UploadedVideo(models.Model):
-    PUBLIC = 'PU'
-    PRIVATE = 'PR'
+    PUBLIC = 'Public'
+    PRIVATE = 'Private'
     VISIBILITY = {
         PUBLIC: "Public",
         PRIVATE: "Private"
@@ -43,7 +43,7 @@ class UploadedVideo(models.Model):
     tags = models.JSONField(default=default_tags, blank=True, null=True)
     playlist = models.CharField(max_length=100, blank=True, null=True)
     visibility = models.CharField(
-        max_length=3, choices=VISIBILITY, default=VISIBILITY[PUBLIC], blank=True, null=True)
+        max_length=7, choices=VISIBILITY, default=PUBLIC, blank=True, null=True)
     datetime_uploaded = models.DateTimeField(auto_now_add=True)
     comments = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)

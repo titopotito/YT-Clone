@@ -28,6 +28,7 @@ input[type="file"] {
     border-radius: 10px;
     object-fit: cover;
     aspect-ratio: 1.8/1;
+    overflow-clip-margin: unset;
 }
 
 ::-webkit-scrollbar {
@@ -139,6 +140,11 @@ input[type="file"] {
 .btn-round:hover {
     cursor: pointer;
     background-color: lightgray;
+}
+
+.btn-round:disabled:hover {
+    cursor: default;
+    background-color: rgba(239, 239, 239, 0.3);
 }
 
 .btn-round-no-bg {

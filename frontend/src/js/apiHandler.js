@@ -18,8 +18,18 @@ async function post(endpoint, body) {
         body: body,
     });
     const data = await response.json();
-    if (response.ok) return { isSuccess: response.ok };
-    return { isSuccess: response.ok, errors: response.errors };
+    if (response.ok) return { isSuccess: response.ok, data: data };
+    return { isSuccess: response.ok, errors: data };
+}
+
+async function del(endpoint) {
+    const response = await fetch(API_URL + endpoint, {
+        method: "DELETE",
+        headers: { Authorization: "Token " + CookieHandler.get("token") },
+    });
+    if (response.ok) return { isSuccess: response.ok, message: "Delete request successful." };
+    const errors = await response.json();
+    return { isSuccess: response.ok, errors: errors };
 }
 
 async function login(body) {
@@ -46,4 +56,4 @@ async function register(body) {
     return { isSuccess: response.ok, errors: errors };
 }
 
-export { get, post, login, register };
+export { get, post, del, login, register };

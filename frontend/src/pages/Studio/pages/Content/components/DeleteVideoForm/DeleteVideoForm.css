@@ -1,0 +1,59 @@
+#delete-video-form {
+    position: absolute;
+    top: -56px;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#delete-video-form > form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#delete-video-form > form > h4 {
+    margin: 0;
+}
+
+#delete-video-form > form > div {
+    margin: 10px 0;
+}
+
+#delete-video-form .delete-video-thumbnail-container {
+    background-color: #f1f1f1;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+#delete-video-form .delete-video-warning-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.4px;
+}
+
+#delete-video-form .delete-video-btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+#delete-video-form .delete-video-btn-container div {
+    display: flex;
+    gap: 20px;
+}
+
+#delete-video-form .delete-video-btn-container span {
+    font-weight: 600;
+}
