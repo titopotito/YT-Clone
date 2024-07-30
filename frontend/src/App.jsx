@@ -51,6 +51,7 @@ function App() {
                 </Route>
                 <Route element={<StudioLayout />}>
                     <Route path="/studio" element={<Studio.Content />} />
+                    <Route path="/studio/video/edit" element={<Studio.Edit />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

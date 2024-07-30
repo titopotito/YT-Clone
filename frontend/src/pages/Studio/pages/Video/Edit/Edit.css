@@ -1,0 +1,49 @@
+#update-video-form {
+    margin-left: 20px;
+    overflow-y: scroll;
+}
+
+#update-video-form .header {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    max-width: calc(650px + 360px + 20px);
+}
+
+#update-video-form > div:last-child {
+    display: flex;
+    gap: 20px;
+}
+
+#update-video-form .video-detail-col-1 {
+    max-width: 650px;
+}
+
+#update-video-form video {
+    max-width: 360px;
+    border-radius: 15px 15px 0 0;
+}
+
+#update-video-form .video-detail-col-2 {
+    background-color: #f9f9f9;
+    height: fit-content;
+    padding-bottom: 10px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#update-video-form .bordered-form-group {
+    margin-bottom: 20px;
+}
+
+#update-video-form .basic-form-group {
+    padding-bottom: 30px;
+}
+
+#update-video-form .edit-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 10px 0;
+}

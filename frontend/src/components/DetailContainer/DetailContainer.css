@@ -1,0 +1,19 @@
+.basic-detail-container {
+    padding: 10px;
+}
+
+.basic-detail-container {
+    margin: 0;
+}
+
+.basic-detail-container p,
+.basic-detail-container a {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.basic-detail-container *:first-child {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+    color: #606060;
+}

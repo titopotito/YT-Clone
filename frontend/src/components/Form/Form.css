@@ -1,0 +1,44 @@
+.basic-form-group h2,
+.basic-form-group h3,
+.basic-form-group h4 {
+    margin: 0;
+}
+
+.basic-form-group p {
+    color: gray;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.bordered-form-group {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+.bordered-form-group:hover {
+    border: 1px solid black;
+}
+
+.bordered-form-group label {
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.bordered-form-group input,
+.bordered-form-group textarea {
+    border: none;
+    outline: none;
+}
+
+.bordered-form-group:has(input:focus),
+.bordered-form-group:has(textarea:focus) {
+    outline: 1px solid black;
+    border: 1px solid black;
+}
